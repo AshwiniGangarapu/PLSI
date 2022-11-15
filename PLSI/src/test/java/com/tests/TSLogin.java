@@ -73,12 +73,14 @@ public class TSLogin extends BaseClass{
 		
 		UI.sendKeys(loginPage.emailAddress(),"ravi.thota@sstech.us");
 		//UI.sendKeys(loginPage.emailAddress(),data.getDataAsString(sheet,"EmailAddress", 2));
-		logger.log(LogStatus.INFO, "entered email address as : "+ data.getDataAsString(sheet,"EmailAddress", 2));
-
+		//logger.log(LogStatus.INFO, "entered email address as : "+ data.getDataAsString(sheet,"EmailAddress", 2));
+		logger.log(LogStatus.INFO, "entered email address as : ravi.thota@sstech.us");
+		
 		UI.sendKeys(loginPage.password(),"Welcome@1");
 		//UI.sendKeys(loginPage.password(),data.getDataAsString(sheet,"Password", 2));
-		logger.log(LogStatus.INFO, "entered password as : "+ data.getDataAsString(sheet,"Password", 2));
-
+		//logger.log(LogStatus.INFO, "entered password as : "+ data.getDataAsString(sheet,"Password", 2));
+		logger.log(LogStatus.INFO, "entered password as : Welcome@1");
+		
 		UI.click(loginPage.logIn());
 		logger.log(LogStatus.INFO, "clicked Log-in button");
 		
@@ -135,13 +137,14 @@ public class TSLogin extends BaseClass{
 				for(int i=0;i<rowSize-1;i++) {
 
 					String first_name=column_First_Name.get(i).getText();
+					logger.log(LogStatus.INFO, "iterating through first name list");
 					System.out.println(column_First_Name.get(i).getText());
 					
 					if (first_name.equalsIgnoreCase("Harsha")) {
 						
 						System.out.println(i);
 						column_Actions.get(i).click();
-						logger.log(LogStatus.INFO, "selected the column first name");	
+						logger.log(LogStatus.INFO, "selected the corresponding row and clicked actions");	
 						break;
 															
 					}
@@ -182,12 +185,13 @@ public class TSLogin extends BaseClass{
 		
 		UI.sendKeys(loginPage.emailAddress(),"ravi.thota@sstech.us");
 		//UI.sendKeys(loginPage.emailAddress(),data.getDataAsString(sheet,"EmailAddress", 2));
-		logger.log(LogStatus.INFO, "entered email address as : "+ data.getDataAsString(sheet,"EmailAddress", 2));
+		logger.log(LogStatus.INFO, "entered email address as : ravi.thota@sstech.us");
+		//logger.log(LogStatus.INFO, "entered email address as : "+ data.getDataAsString(sheet,"EmailAddress", 2));
 
 		UI.sendKeys(loginPage.password(),"Welcome@1");
 		//UI.sendKeys(loginPage.password(),data.getDataAsString(sheet,"Password", 2));
-		logger.log(LogStatus.INFO, "entered password as : "+ data.getDataAsString(sheet,"Password", 2));
-
+		//logger.log(LogStatus.INFO, "entered password as : "+ data.getDataAsString(sheet,"Password", 2));
+		logger.log(LogStatus.INFO, "entered password as : Welcome@1");
 		UI.click(loginPage.logIn());
 		logger.log(LogStatus.INFO, "clicked Log-in button");
 		
@@ -220,11 +224,14 @@ public class TSLogin extends BaseClass{
 			String currentDate=sdf.format(dNow);
 						
 			for(int i=0;i<=rowSize-1;i++) {
+				
+				logger.log(LogStatus.INFO, "looping through all rows in Date coulumn");
 
 				String date=column_Date.get(i).getText();
 				System.out.println(column_Date.get(i).getText());
 				
 				Assert.assertTrue(currentDate.equalsIgnoreCase(date));
+				logger.log(LogStatus.PASS, "looping through all rows in Date coulumn and compared with current date");
 				System.out.println("date matches with current date");
 			
 			}     
