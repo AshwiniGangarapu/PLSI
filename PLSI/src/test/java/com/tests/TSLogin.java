@@ -25,7 +25,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.base.BaseClass;
-import com.pom.AllAppointmentsPage;
+import com.pom.NewAppointmentPage;
 import com.pom.DashBoardPage;
 import com.pom.LoginPage;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -40,7 +40,7 @@ public class TSLogin extends BaseClass{
 	WebDriver driver = null;
 	
 	LoginPage loginPage=new LoginPage();
-	AllAppointmentsPage allApts=new AllAppointmentsPage();
+	NewAppointmentPage allApts=new NewAppointmentPage();
 	DashBoardPage dashboard=new DashBoardPage();
 	//intializing a variable of type ExtentTest class.
 	//ExtentTest is used to create the body of the report.
@@ -66,179 +66,55 @@ public class TSLogin extends BaseClass{
 
 	}
 	
-	@Test(description="This TC will perform valid login and creates a new appointment")
-	public void NewAppointment() throws InterruptedException, IOException{
-
-		logger = report.startTest("Verifying creating new appointment");
+	@Test(description="This will verify valid login")
+	public void Login() {
 		
-		UI.sendKeys(loginPage.emailAddress(),"ravi.thota@sstech.us");
-		//UI.sendKeys(loginPage.emailAddress(),data.getDataAsString(sheet,"EmailAddress", 2));
-		//logger.log(LogStatus.INFO, "entered email address as : "+ data.getDataAsString(sheet,"EmailAddress", 2));
-		logger.log(LogStatus.INFO, "entered email address as : ravi.thota@sstech.us");
+		logger = report.startTest("Verifying Logging to the application");
 		
-		UI.sendKeys(loginPage.password(),"Welcome@1");
-		//UI.sendKeys(loginPage.password(),data.getDataAsString(sheet,"Password", 2));
-		//logger.log(LogStatus.INFO, "entered password as : "+ data.getDataAsString(sheet,"Password", 2));
-		logger.log(LogStatus.INFO, "entered password as : Welcome@1");
+		UI.sendKeys(loginPage.emailAddress(),data.getDataAsString(sheet,1, 1));
+		logger.log(LogStatus.INFO, "entered email address as : "+ data.getDataAsString(sheet,1, 1));
+		
+		UI.sendKeys(loginPage.password(),data.getDataAsString(sheet,"Password", 1));
+		logger.log(LogStatus.INFO, "entered password as : "+ data.getDataAsString(sheet,"Password", 1));
 		
 		UI.click(loginPage.logIn());
 		logger.log(LogStatus.INFO, "clicked Log-in button");
 		
-		Thread.sleep(1000);
+		Assert.assertTrue(UI.isDisplayed(dashboard.logOut()));
+		logger.log(LogStatus.PASS, "reached Dashboard page as the logout element is displayed");
 		
-		UI.click(dashboard.newAppointment());
-		logger.log(LogStatus.INFO, "clicked NEW APPOINTMENT button");
+		UI.click(dashboard.logOut());
+		logger.log(LogStatus.INFO, "clicked Log-out button");
+			
 		
-		Thread.sleep(1000);
-		
-		UI.sendKeys(allApts.appointmentDate(),"20-11-2022");
-		logger.log(LogStatus.INFO, "entered valid future appointment date");
-		
-		UI.sendKeys(allApts.appointmentStartTime(),"23:28");
-		logger.log(LogStatus.INFO, "entered valid future appointment start time");
-		
-		UI.sendKeys(allApts.appointmentEndTime(),"23:56");
-		logger.log(LogStatus.INFO, "entered valid future appointment end time");
-		
-		UI.sendKeys(allApts.client(),"CHOP");
-		UI.sendkeyboardKeysEnter(allApts.client());
-		logger.log(LogStatus.INFO, "entered valid CHOP");
-		
-		UI.sendKeys(allApts.Facility(),"CHOP Main");
-		UI.sendkeyboardKeysEnter(allApts.Facility());
-		logger.log(LogStatus.INFO, "entered valid CHOP Main");
-		
-		Thread.sleep(1000);
-		
-		UI.click(allApts.searchPatient());
-		logger.log(LogStatus.INFO, "clicked Search Patient button");
-		
-		WebElement patientinfoTable = UI.getElement(allApts.patientInfoTable());
-		
-		        //getting number of rows of that page table
-				WebElement TogetRows = driver.findElement(By.xpath("//div[@class='MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation24 MuiDialog-paper MuiDialog-paperScrollPaper MuiDialog-paperWidthXl MuiDialog-paperFullWidth css-1liyizg']//table/tbody"));
-				List<WebElement>TotalRowsList = TogetRows.findElements(By.tagName("tr"));
-				System.out.println("Total number of Rows in the table are : "+ TotalRowsList.size());
-				int rowSize=TotalRowsList.size();
-				logger.log(LogStatus.INFO, "Found number of rows in the page: "+rowSize);
-				
-				//getting number of columns in each row				
-				WebElement ToGetColumns = driver.findElement(By.xpath("//div[@class='MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation24 MuiDialog-paper MuiDialog-paperScrollPaper MuiDialog-paperWidthXl MuiDialog-paperFullWidth css-1liyizg']//table/tbody/tr"));
-				List<WebElement> TotalColsList = ToGetColumns.findElements(By.tagName("td"));
-				System.out.println("Total Number of Columns in the table are: "+TotalColsList.size());
-				int columnSize=TotalColsList.size();
-				logger.log(LogStatus.INFO, "Found number of columns in each row: "+columnSize);
-				
-				List<WebElement> column_Actions =driver.findElements(By.xpath("//div[@class='MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation24 MuiDialog-paper MuiDialog-paperScrollPaper MuiDialog-paperWidthXl MuiDialog-paperFullWidth css-1liyizg']//table//tr/td[5]"));
-				logger.log(LogStatus.INFO, "selected the column actions");
-				List<WebElement> column_First_Name =driver.findElements(By.xpath("//div[@class='MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation24 MuiDialog-paper MuiDialog-paperScrollPaper MuiDialog-paperWidthXl MuiDialog-paperFullWidth css-1liyizg']//table//tr/td[2]"));
-				logger.log(LogStatus.INFO, "selected the column first name");
-				
-				for(int i=0;i<rowSize-1;i++) {
-
-					String first_name=column_First_Name.get(i).getText();
-					logger.log(LogStatus.INFO, "iterating through first name list");
-					System.out.println(column_First_Name.get(i).getText());
-					
-					if (first_name.equalsIgnoreCase("Harsha")) {
-						
-						System.out.println(i);
-						column_Actions.get(i).click();
-						logger.log(LogStatus.INFO, "selected the corresponding row and clicked actions");	
-						break;
-															
-					}
-													
-				}
-				
-				UI.sendKeys(allApts.requestedLanguage(),"spanish");
-				UI.sendkeyboardKeysEnter(allApts.requestedLanguage());
-				logger.log(LogStatus.INFO, "entered requested lanuguage as spanish");	
-				
-				UI.sendKeys(allApts.requesterName(),"Mayuri");
-				logger.log(LogStatus.INFO, "entered requester name as Mayuri");
-				
-				UI.sendKeys(allApts.requesterPhone(),"9948363539");
-				logger.log(LogStatus.INFO, "entered requester phone as 9948363539");
-				
-				UI.sendKeys(allApts.requesterEmail(),"mayuri.chitgope@sstech.us");
-				logger.log(LogStatus.INFO, "entered requester email address");
-				
-				UI.click(allApts.setAppointment());
-				logger.log(LogStatus.INFO, "clicked set appointment");	
-											
-				Assert.assertTrue(UI.isDisplayed(dashboard.logOut()));
-				
-				UI.click(dashboard.logOut());
-				logger.log(LogStatus.INFO, "clicked Log-out button");
-				
-				Thread.sleep(1000);
-				
-				
-					
 	}
 	
-	@Test(description="This TC will perform valid login and verified that all appointments tab page is showing only todays appointments")
-	public void AllAppointmentsDateVerification() throws InterruptedException, IOException{
+	@Test(description="This will verify invalid login error message")
+	public void InvalidLogin() {
 		
-        logger = report.startTest("Verifying all appointments tab page is showing only todays appointments");
+		logger = report.startTest("Verifying invalid login error message");
 		
-		UI.sendKeys(loginPage.emailAddress(),"ravi.thota@sstech.us");
-		//UI.sendKeys(loginPage.emailAddress(),data.getDataAsString(sheet,"EmailAddress", 2));
-		logger.log(LogStatus.INFO, "entered email address as : ravi.thota@sstech.us");
-		//logger.log(LogStatus.INFO, "entered email address as : "+ data.getDataAsString(sheet,"EmailAddress", 2));
-
-		UI.sendKeys(loginPage.password(),"Welcome@1");
-		//UI.sendKeys(loginPage.password(),data.getDataAsString(sheet,"Password", 2));
-		//logger.log(LogStatus.INFO, "entered password as : "+ data.getDataAsString(sheet,"Password", 2));
-		logger.log(LogStatus.INFO, "entered password as : Welcome@1");
+		UI.sendKeys(loginPage.emailAddress(),data.getDataAsString(sheet,1, 3));
+		logger.log(LogStatus.INFO, "entered email address as : "+ data.getDataAsString(sheet,1, 3));
+		
+		UI.sendKeys(loginPage.password(),data.getDataAsString(sheet,"Password", 3));
+		logger.log(LogStatus.INFO, "entered password as : "+ data.getDataAsString(sheet,"Password", 3));
+		
 		UI.click(loginPage.logIn());
 		logger.log(LogStatus.INFO, "clicked Log-in button");
 		
-		Thread.sleep(10000);
-						
-		WebElement TogetRows = UI.getElement(dashboard.allAppointmentTableBody());
-		List<WebElement>TotalRowsList = TogetRows.findElements(By.tagName("tr"));
-		System.out.println("Total number of Rows in the table are : "+ TotalRowsList.size());
-		int rowSize=TotalRowsList.size();
-		logger.log(LogStatus.INFO, "Found number of rows in the page: "+rowSize);
+		Assert.assertTrue(UI.isDisplayed(loginPage.invalidCredentialsErrorMsg()));
+		logger.log(LogStatus.PASS, "error msg is displayed");		
+			
+		Assert.assertEquals("Error: Invalid User Credentials", UI.getText(loginPage.invalidCredentialsErrorMsg()));
+		logger.log(LogStatus.PASS, "error message is asserted for the text displayed");	
 		
-		List<WebElement> column_Date = UI.getElements(dashboard.allAppointmentTableBodyRowsDatecolumn());
-		logger.log(LogStatus.INFO, "selected the column Date");
-		
-			
-			Date dNow = new Date( );
-			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-			
-			ZoneId usChicago = ZoneId.of("America/Chicago");
-			System.out.println(usChicago);
-			logger.log(LogStatus.INFO, "found the zone which will be used to convert time into CST "+usChicago);
-
-			TimeZone tzInChicago = TimeZone.getTimeZone(usChicago);
-
-			sdf.setTimeZone(tzInChicago);
-
-			System.out.println("Current CST Date: " + sdf.format(dNow));
-			logger.log(LogStatus.INFO, "current CST time is "+sdf.format(dNow));
-
-			String currentDate=sdf.format(dNow);
-						
-			for(int i=0;i<=rowSize-1;i++) {
-				
-				logger.log(LogStatus.INFO, "looping through all rows in Date coulumn");
-
-				String date=column_Date.get(i).getText();
-				System.out.println(column_Date.get(i).getText());
-				
-				Assert.assertTrue(currentDate.equalsIgnoreCase(date));
-				logger.log(LogStatus.PASS, "looping through all rows in Date coulumn and compared with current date");
-				System.out.println("date matches with current date");
-			
-			}     
-			
-											
-		}
-		
+	}
+	
+	
+	
+	
+	
 	@AfterMethod
 	public void signout(ITestResult result) throws InterruptedException {
 
@@ -256,10 +132,7 @@ public class TSLogin extends BaseClass{
 		
 		report.endTest(logger);
 		
-		UI.click(dashboard.logOut());
-		logger.log(LogStatus.INFO, "clicked Log-out button");
 		
-		Thread.sleep(1000);
 	}
 
 	@AfterClass

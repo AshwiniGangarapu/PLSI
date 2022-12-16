@@ -17,7 +17,9 @@
 		
 		<classes>
 					 
-		 <class name="com.tests.TSLogin" /> 		 
+		 <!--class name="com.tests.TSLogin" /> 
+		 <class name="com.tests.TSAllAppointments"	/-->
+		 <class name="com.tests.TSNewAppointment"	/>	 
 			  	 
 		</classes>
 	</test>

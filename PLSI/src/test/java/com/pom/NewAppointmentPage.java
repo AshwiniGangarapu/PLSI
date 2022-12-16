@@ -2,7 +2,9 @@ package com.pom;
 
 import org.openqa.selenium.By;
 
-public class AllAppointmentsPage {
+public class NewAppointmentPage {
+	
+	
 		
 	public By appointmentDate() {
     	return By.name("appointments.0.aptDate");
