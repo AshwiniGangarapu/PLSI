@@ -19,7 +19,8 @@
 					 
 		 <!--class name="com.tests.TSLogin" /> 
 		 <class name="com.tests.TSAllAppointments"	/-->
-		 <class name="com.tests.TSNewAppointment"	/>	 
+		 <class name="com.tests.TSNewAppointment"	/>
+		 <!--class name="com.tests.TSAcceptAppointmentByInterpreter"	/--> 
 			  	 
 		</classes>
 	</test>

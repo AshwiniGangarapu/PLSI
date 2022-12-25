@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Dec 16 15:38:30 IST 2022</td>
+<td>Started on:</td><td>Tue Dec 20 11:56:13 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>220 seconds (220542 ms)</td>
+<tr><td>Total time:</td><td>35 seconds (35096 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,32 +76,13 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.tests.TSNewAppointment.signout()'><b>signout</b><br>Test class: com.tests.TSNewAppointment<br>Parameters: [TestResult name=RejectAppointment status=FAILURE method=TSNewAppointment.RejectAppointment()[pri:0, instance:com.tests.TSNewAppointment@3a7442c7] output={null}]</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button class=&quot;MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-9ixttz&quot; tabindex=&quot;0&quot; type=&quot;button&quot;&gt;...&lt;/button&gt; is not clickable at point (1481, 63). Other element would receive the click: &lt;div class=&quot;MuiDialog-container MuiDialog-scrollPaper css-16u656j&quot; role=&quot;presentation&quot; tabindex=&quot;-1&quot; style=&quot;transform: none; transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=108.0.5359.99)
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;SSTINDEVLP1071&apos;, ip: &apos;192.168.1.19&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.5&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ae0e065cd3c90698a80be819e759cb81, clickElement {id=405a740a-a74d-4f00-9048-88a19b5961bf}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.99, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\Ashwini.G\AppData\...}, goog:chromeOptions: {debuggerAddress: localhost:62156}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62156/devtoo..., se:cdpVersion: 108.0.5359.99, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (ae0e065cd3c90698a80be819e759cb81)] -&gt; css selector: .MuiButtonBase-root.MuiIconButton-root.MuiIconButton-colorInherit.MuiIconButton-sizeSmall.css-9ixttz]
-Session ID: ae0e065cd3c90698a80be819e759cb81
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+<td title='com.tests.TSNewAppointment.signout()'><b>signout</b><br>Test class: com.tests.TSNewAppointment<br>Parameters: [TestResult name=NewAppointment status=FAILURE method=TSNewAppointment.NewAppointment()[pri:0, instance:com.tests.TSNewAppointment@3a7442c7] output={null}]</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.utils.SeleniumWaitUtils$1@69860811 (tried for 30 second(s) with 15 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:263)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.utils.SeleniumWaitUtils.doWaitForElement(SeleniumWaitUtils.java:24)
 	at com.utils.SeleniumUIUtils.click(SeleniumUIUtils.java:58)
-	at com.tests.TSNewAppointment.signout(TSNewAppointment.java:521)
+	at com.tests.TSNewAppointment.signout(TSNewAppointment.java:738)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -135,18 +116,16 @@ Session ID: ae0e065cd3c90698a80be819e759cb81
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace731979931", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace731979931'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button class=&quot;MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-9ixttz&quot; tabindex=&quot;0&quot; type=&quot;button&quot;&gt;...&lt;/button&gt; is not clickable at point (1481, 63). Other element would receive the click: &lt;div class=&quot;MuiDialog-container MuiDialog-scrollPaper css-16u656j&quot; role=&quot;presentation&quot; tabindex=&quot;-1&quot; style=&quot;transform: none; transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=108.0.5359.99)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-colorInherit.MuiIconButton-sizeSmall.css-9ixttz&quot;}
+  (Session info: chrome=108.0.5359.125)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
 System info: host: &apos;SSTINDEVLP1071&apos;, ip: &apos;192.168.1.19&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.5&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ae0e065cd3c90698a80be819e759cb81, clickElement {id=405a740a-a74d-4f00-9048-88a19b5961bf}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.99, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\Ashwini.G\AppData\...}, goog:chromeOptions: {debuggerAddress: localhost:62156}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62156/devtoo..., se:cdpVersion: 108.0.5359.99, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (ae0e065cd3c90698a80be819e759cb81)] -&gt; css selector: .MuiButtonBase-root.MuiIconButton-root.MuiIconButton-colorInherit.MuiIconButton-sizeSmall.css-9ixttz]
-Session ID: ae0e065cd3c90698a80be819e759cb81
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+Command: [e195fa22dafc8048193808c5bc702159, findElement {using=css selector, value=.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-colorInherit.MuiIconButton-sizeSmall.css-9ixttz}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\Ashwini.G\AppData\...}, goog:chromeOptions: {debuggerAddress: localhost:52985}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52985/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e195fa22dafc8048193808c5bc702159
+	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
@@ -157,10 +136,21 @@ Session ID: ae0e065cd3c90698a80be819e759cb81
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at com.utils.SeleniumWaitUtils$1.apply(SeleniumWaitUtils.java:26)
+	at com.utils.SeleniumWaitUtils$1.apply(SeleniumWaitUtils.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	... 36 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace1751751420", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1751751420'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.utils.SeleniumWaitUtils$1@69860811 (tried for 30 second(s) with 15 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:263)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.utils.SeleniumWaitUtils.doWaitForElement(SeleniumWaitUtils.java:24)
 	at com.utils.SeleniumUIUtils.click(SeleniumUIUtils.java:58)
-	at com.tests.TSNewAppointment.signout(TSNewAppointment.java:521)
+	at com.tests.TSNewAppointment.signout(TSNewAppointment.java:738)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -194,8 +184,36 @@ Session ID: ae0e065cd3c90698a80be819e759cb81
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-colorInherit.MuiIconButton-sizeSmall.css-9ixttz&quot;}
+  (Session info: chrome=108.0.5359.125)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;SSTINDEVLP1071&apos;, ip: &apos;192.168.1.19&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e195fa22dafc8048193808c5bc702159, findElement {using=css selector, value=.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-colorInherit.MuiIconButton-sizeSmall.css-9ixttz}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\Ashwini.G\AppData\...}, goog:chromeOptions: {debuggerAddress: localhost:52985}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52985/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e195fa22dafc8048193808c5bc702159
+	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at com.utils.SeleniumWaitUtils$1.apply(SeleniumWaitUtils.java:26)
+	at com.utils.SeleniumWaitUtils$1.apply(SeleniumWaitUtils.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	... 36 more
 </pre></div></td>
-<td>1</td>
+<td>30</td>
 <td>com.tests.TSNewAppointment@3a7442c7</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
@@ -221,15 +239,12 @@ Session ID: ae0e065cd3c90698a80be819e759cb81
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.tests.TSNewAppointment.RejectAppointment()'><b>RejectAppointment</b><br>Test class: com.tests.TSNewAppointment</td>
-<td><div><pre>java.lang.AssertionError: expected [ OFFER REJECTED] but found [OFFER REJECTED]
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.failNotEquals(Assert.java:1413)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
-	at org.testng.Assert.assertEquals(Assert.java:131)
-	at org.testng.Assert.assertEquals(Assert.java:655)
-	at org.testng.Assert.assertEquals(Assert.java:665)
-	at com.tests.TSNewAppointment.RejectAppointment(Unknown Source)
+<td title='com.tests.TSNewAppointment.NewAppointment()'><b>NewAppointment</b><br>Test class: com.tests.TSNewAppointment<br>Test method: This TC will perform valid login and creates a new appointment</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.xssf.usermodel.XSSFRow.getLastCellNum()&quot; because the return value of &quot;org.apache.poi.xssf.usermodel.XSSFSheet.getRow(int)&quot; is null
+	at com.utils.ExcelUtils.getRowByName(ExcelUtils.java:38)
+	at com.utils.ExcelUtils.getDataByColumnName(ExcelUtils.java:51)
+	at com.utils.ExcelUtils.getDataAsString(ExcelUtils.java:56)
+	at com.tests.TSNewAppointment.NewAppointment(TSNewAppointment.java:79)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -258,15 +273,12 @@ Session ID: ae0e065cd3c90698a80be819e759cb81
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1946904104", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1946904104'><pre>java.lang.AssertionError: expected [ OFFER REJECTED] but found [OFFER REJECTED]
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.failNotEquals(Assert.java:1413)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
-	at org.testng.Assert.assertEquals(Assert.java:131)
-	at org.testng.Assert.assertEquals(Assert.java:655)
-	at org.testng.Assert.assertEquals(Assert.java:665)
-	at com.tests.TSNewAppointment.RejectAppointment(Unknown Source)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1711154833", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1711154833'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.xssf.usermodel.XSSFRow.getLastCellNum()&quot; because the return value of &quot;org.apache.poi.xssf.usermodel.XSSFSheet.getRow(int)&quot; is null
+	at com.utils.ExcelUtils.getRowByName(ExcelUtils.java:38)
+	at com.utils.ExcelUtils.getDataByColumnName(ExcelUtils.java:51)
+	at com.utils.ExcelUtils.getDataAsString(ExcelUtils.java:56)
+	at com.tests.TSNewAppointment.NewAppointment(TSNewAppointment.java:79)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -296,7 +308,7 @@ Session ID: ae0e065cd3c90698a80be819e759cb81
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>213</td>
+<td>0</td>
 <td>com.tests.TSNewAppointment@3a7442c7</td></tr>
 </table><p>
 </body>

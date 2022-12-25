@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results ignored="2" total="8" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-16T16:13:39 IST" name="Suite" finished-at="2022-12-16T16:16:33 IST" duration-ms="173828">
+  <suite started-at="2022-12-25T17:56:51 IST" name="Suite" finished-at="2022-12-25T18:01:13 IST" duration-ms="261801">
     <groups>
     </groups>
-    <test started-at="2022-12-16T16:13:39 IST" name="Test" finished-at="2022-12-16T16:16:33 IST" duration-ms="173828">
+    <test started-at="2022-12-25T17:56:51 IST" name="Test" finished-at="2022-12-25T18:01:13 IST" duration-ms="261801">
       <class name="com.tests.TSNewAppointment">
-        <test-method is-config="true" signature="start()[pri:0, instance:com.tests.TSNewAppointment@6bbe85a8]" started-at="2022-12-16T16:13:38 IST" name="start" finished-at="2022-12-16T16:13:39 IST" duration-ms="484" status="PASS">
+        <test-method is-config="true" signature="start()[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-25T17:56:51 IST" name="start" finished-at="2022-12-25T17:56:51 IST" duration-ms="492" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- start -->
-        <test-method is-config="true" signature="init(java.lang.String,java.lang.String)[pri:0, instance:com.tests.TSNewAppointment@6bbe85a8]" started-at="2022-12-16T16:13:39 IST" name="init" finished-at="2022-12-16T16:13:44 IST" duration-ms="4733" status="PASS">
+        <test-method is-config="true" signature="init(java.lang.String,java.lang.String)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-25T17:56:51 IST" name="init" finished-at="2022-12-25T17:56:56 IST" duration-ms="5068" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,30 +27,181 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method is-config="true" signature="Setup()[pri:0, instance:com.tests.TSNewAppointment@6bbe85a8]" started-at="2022-12-16T16:13:44 IST" name="Setup" finished-at="2022-12-16T16:13:44 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Setup -->
-        <test-method signature="RejectAppointment()[pri:0, instance:com.tests.TSNewAppointment@6bbe85a8]" started-at="2022-12-16T16:13:44 IST" name="RejectAppointment" finished-at="2022-12-16T16:16:31 IST" duration-ms="167357" status="PASS">
+        <test-method signature="RejectAppointment()[pri:1, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-25T17:56:56 IST" name="RejectAppointment" finished-at="2022-12-25T17:57:51 IST" duration-ms="54608" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RejectAppointment -->
-        <test-method is-config="true" signature="signout(org.testng.ITestResult)[pri:0, instance:com.tests.TSNewAppointment@6bbe85a8]" started-at="2022-12-16T16:16:31 IST" name="signout" finished-at="2022-12-16T16:16:32 IST" duration-ms="1453" status="PASS">
+        <test-method is-config="true" signature="signout(org.testng.ITestResult)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-25T17:57:51 IST" name="signout" finished-at="2022-12-25T17:57:51 IST" duration-ms="490" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=RejectAppointment status=SUCCESS method=TSNewAppointment.RejectAppointment()[pri:0, instance:com.tests.TSNewAppointment@6bbe85a8] output={null}]]]>
+                <![CDATA[[TestResult name=RejectAppointment status=SUCCESS method=TSNewAppointment.RejectAppointment()[pri:1, instance:com.tests.TSNewAppointment@4b013c76] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signout -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.tests.TSNewAppointment@6bbe85a8]" started-at="2022-12-16T16:16:32 IST" name="teardown" finished-at="2022-12-16T16:16:33 IST" duration-ms="247" status="PASS">
+        <test-method is-config="true" signature="init(java.lang.String,java.lang.String)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-25T17:57:51 IST" name="init" finished-at="2022-12-25T17:57:56 IST" duration-ms="4259" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://qa.ims.client.sstech.us/login]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method signature="AcceptAppointment()[pri:2, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-25T17:57:56 IST" name="AcceptAppointment" finished-at="2022-12-25T17:58:39 IST" duration-ms="43662" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AcceptAppointment -->
+        <test-method is-config="true" signature="signout(org.testng.ITestResult)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-25T17:58:39 IST" name="signout" finished-at="2022-12-25T17:58:40 IST" duration-ms="248" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=AcceptAppointment status=SUCCESS method=TSNewAppointment.AcceptAppointment()[pri:2, instance:com.tests.TSNewAppointment@4b013c76] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signout -->
+        <test-method is-config="true" signature="init(java.lang.String,java.lang.String)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-25T17:58:40 IST" name="init" finished-at="2022-12-25T17:58:43 IST" duration-ms="3632" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://qa.ims.client.sstech.us/login]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method signature="ReturnAppointment()[pri:3, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-25T17:58:43 IST" name="ReturnAppointment" finished-at="2022-12-25T17:59:14 IST" duration-ms="30723" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReturnAppointment -->
+        <test-method is-config="true" signature="signout(org.testng.ITestResult)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-25T17:59:14 IST" name="signout" finished-at="2022-12-25T17:59:14 IST" duration-ms="253" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ReturnAppointment status=SUCCESS method=TSNewAppointment.ReturnAppointment()[pri:3, instance:com.tests.TSNewAppointment@4b013c76] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signout -->
+        <test-method is-config="true" signature="init(java.lang.String,java.lang.String)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-25T17:59:14 IST" name="init" finished-at="2022-12-25T17:59:18 IST" duration-ms="4063" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://qa.ims.client.sstech.us/login]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method signature="CheckInAppointment()[pri:4, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-25T17:59:18 IST" name="CheckInAppointment" finished-at="2022-12-25T17:59:50 IST" duration-ms="31275" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckInAppointment -->
+        <test-method is-config="true" signature="signout(org.testng.ITestResult)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-25T17:59:50 IST" name="signout" finished-at="2022-12-25T17:59:50 IST" duration-ms="294" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CheckInAppointment status=SUCCESS method=TSNewAppointment.CheckInAppointment()[pri:4, instance:com.tests.TSNewAppointment@4b013c76] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signout -->
+        <test-method is-config="true" signature="init(java.lang.String,java.lang.String)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-25T17:59:50 IST" name="init" finished-at="2022-12-25T17:59:54 IST" duration-ms="4292" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://qa.ims.client.sstech.us/login]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method signature="CheckOutAndFinaliseAppointment()[pri:5, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-25T17:59:54 IST" name="CheckOutAndFinaliseAppointment" finished-at="2022-12-25T18:00:30 IST" duration-ms="35989" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckOutAndFinaliseAppointment -->
+        <test-method is-config="true" signature="signout(org.testng.ITestResult)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-25T18:00:30 IST" name="signout" finished-at="2022-12-25T18:00:30 IST" duration-ms="253" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CheckOutAndFinaliseAppointment status=SUCCESS method=TSNewAppointment.CheckOutAndFinaliseAppointment()[pri:5, instance:com.tests.TSNewAppointment@4b013c76] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signout -->
+        <test-method is-config="true" signature="init(java.lang.String,java.lang.String)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-25T18:00:30 IST" name="init" finished-at="2022-12-25T18:00:34 IST" duration-ms="3928" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://qa.ims.client.sstech.us/login]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method signature="ViewFinancialBreakdown()[pri:6, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-25T18:00:34 IST" name="ViewFinancialBreakdown" finished-at="2022-12-25T18:01:13 IST" duration-ms="38467" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ViewFinancialBreakdown -->
+        <test-method is-config="true" signature="signout(org.testng.ITestResult)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-25T18:01:13 IST" name="signout" finished-at="2022-12-25T18:01:13 IST" duration-ms="245" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ViewFinancialBreakdown status=SUCCESS method=TSNewAppointment.ViewFinancialBreakdown()[pri:6, instance:com.tests.TSNewAppointment@4b013c76] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signout -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-25T18:01:13 IST" name="teardown" finished-at="2022-12-25T18:01:13 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="closeApplication()[pri:0, instance:com.tests.TSNewAppointment@6bbe85a8]" started-at="2022-12-16T16:16:33 IST" name="closeApplication" finished-at="2022-12-16T16:16:33 IST" duration-ms="479" status="PASS">
+        <test-method is-config="true" signature="closeApplication()[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-25T18:01:13 IST" name="closeApplication" finished-at="2022-12-25T18:01:13 IST" duration-ms="168" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApplication -->

@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <parameter name="browser" value="chrome"/>
-  <parameter name="URL" value="http://qa.ims.client.sstech.us/login"/>
-  <test thread-count="5" name="Default test(failed)">
+<suite configfailurepolicy="continue" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.listeners.ListenerTest"/>
+    <listener class-name="com.listeners.AnnotationTransformer"/>
+  </listeners>
+  <test thread-count="5" parallel="classes" name="Test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="URL" value="http://qa.ims.client.sstech.us/login"/>
     <classes>
       <class name="com.tests.TSNewAppointment">
         <methods>
-          <include name="RejectAppointment"/>
           <include name="init"/>
-          <include name="Setup"/>
-          <include name="closeApplication"/>
+          <include name="CheckOutAndFinaliseAppointment"/>
           <include name="teardown"/>
+          <include name="closeApplication"/>
           <include name="start"/>
           <include name="signout"/>
         </methods>
       </class> <!-- com.tests.TSNewAppointment -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

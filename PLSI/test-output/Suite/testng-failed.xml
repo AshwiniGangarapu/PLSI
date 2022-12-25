@@ -11,9 +11,8 @@
     <classes>
       <class name="com.tests.TSNewAppointment">
         <methods>
-          <include name="RejectAppointment"/>
           <include name="init"/>
-          <include name="Setup"/>
+          <include name="CheckOutAndFinaliseAppointment"/>
           <include name="teardown"/>
           <include name="closeApplication"/>
           <include name="start"/>

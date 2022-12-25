@@ -13,16 +13,17 @@ public class FilterInDashboard {
 	}
 	
 	public By applyButton() {
-		return By.cssSelector(".MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-fullWidth.css-x2tih8");
+	
+	return By.xpath("//button[text()='Apply']");
 	}
 	
 	public By crossButton() {
 		return By.cssSelector(".MuiSvgIcon-root.MuiSvgIcon-fontSizeInherit.css-1amtie4");
 	}
 	
-	public By language() {
+	/*public By language() {
 		
-		return By.id("react-select-34-input");
-	}
+		return By.id("react-select--input");
+	}*/
 	
 }

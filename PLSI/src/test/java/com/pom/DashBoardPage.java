@@ -9,7 +9,9 @@ public class DashBoardPage {
 	}
 	
 	public By logOut() {
-    	return By.cssSelector(".MuiButtonBase-root.MuiIconButton-root.MuiIconButton-colorInherit.MuiIconButton-sizeSmall.css-9ixttz");
+    	
+		return By.xpath("//span[text()='logout']");
+		//return By.cssSelector(".MuiButtonBase-root.MuiIconButton-root.MuiIconButton-colorInherit.MuiIconButton-sizeSmall.css-9ixttz");
     }////span[text()='logout']
 	
 	public By search() {
@@ -18,7 +20,8 @@ public class DashBoardPage {
 	//input[@class='MuiInputBase-input css-1bqqmdo']
 
 	public By newAppointment() {
-	return By.cssSelector(".MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeSmall.MuiButton-containedSizeSmall.MuiButton-fullWidth.css-l781vv");
+		return By.cssSelector(".css-1txeit4");
+	//return By.cssSelector(".MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeSmall.MuiButton-containedSizeSmall.MuiButton-fullWidth.css-l781vv");
 	}
 
 	public By allAppointmentTable() {
@@ -44,6 +47,15 @@ public class DashBoardPage {
 	public By allAppointmentTableBodyRowsViewColumn() {
 		return By.xpath("//table[@class='MuiTable-root css-jiyur0']/tbody/tr/td[1]");
 	}
+	
+	public By allAppointmentTableBodyRowsPatientColumn() {
+		return By.xpath("//table[@class='MuiTable-root css-jiyur0']/tbody/tr/td[7]");
+	}
+	
+	public By allAppointmentTableBodyRowsLanguageColumn() {
+		return By.xpath("//table[@class='MuiTable-root css-jiyur0']/tbody/tr/td[8]");
+	}
+	
 	
 	public By appointmentCreatedSuccessMsg() {
 		return By.cssSelector(".MuiBox-root.css-lhz7xj");

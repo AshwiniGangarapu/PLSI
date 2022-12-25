@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 public class NewAppointmentPage {
 	
 	
+	
+	
 		
 	public By appointmentDate() {
     	return By.name("appointments.0.aptDate");
@@ -38,7 +40,8 @@ public class NewAppointmentPage {
 	}
 	
 	public By searchPatient() {
-		return By.cssSelector(".MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeSmall.MuiButton-textSizeSmall.css-u3aylm");
+		//return By.cssSelector(".MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeSmall.MuiButton-textSizeSmall.css-u3aylm");
+		return By.xpath("//span[text()='search']");
 		}
 	
 	public By patientInfoTable() {		
