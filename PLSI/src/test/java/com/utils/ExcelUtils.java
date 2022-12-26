@@ -25,7 +25,7 @@ public class ExcelUtils {
 	public XSSFSheet getSheet(XSSFWorkbook workbook, String sheetName) throws IOException {
 		return workbook.getSheet(sheetName);
 	}
-    //method overriding
+    //method overriding getSheet
 	public XSSFSheet getSheet(String filePath, int sheetNumber) throws IOException {
 		return getWorkbook(filePath).getSheetAt(sheetNumber);
 	}
@@ -86,7 +86,7 @@ public class ExcelUtils {
 	}
 		
     @DataProvider(name = "firstDP")
-	public String[][] readExcelDataToArray(XSSFSheet sheet) {
+	public String[][] readExcelDataToArray(XSSFSheet sheet) {//just practice not required in PLSI
 		
 		int rowCount = sheet.getLastRowNum();
 		System.out.println(rowCount);

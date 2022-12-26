@@ -2,7 +2,7 @@
 <suite name="Suite" configfailurepolicy="continue" parallel="none">
 
 <!-- this is used to listen to the test cases, it will create a connection between test cases and listner class.-->
-<!-- it is used to report and take screen shots.in our frame we are only using to take screen shots-->
+<!-- it is used to report and take screen shots.In our framework we are only using to take screen shots-->
     <listeners>
 		<listener class-name="com.listeners.ListenerTest"></listener>
 		<listener class-name="com.listeners.AnnotationTransformer"></listener> 
@@ -19,9 +19,8 @@
 					 
 		 <!--class name="com.tests.TSLogin" /> 
 		 <class name="com.tests.TSAllAppointments"	/-->
-		 <class name="com.tests.TSNewAppointment"	/>
-		 <!--class name="com.tests.TSAcceptAppointmentByInterpreter"	/--> 
-			  	 
+		 <class name="com.tests.TSNewAppRejectAccept"	/>
+					  	 
 		</classes>
 	</test>
 </suite>

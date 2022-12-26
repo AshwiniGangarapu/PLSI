@@ -28,18 +28,22 @@ public class CommonUtils extends BaseClass {
 
 	LoginPage loginPage = new LoginPage();
 
-	public CommonUtils(WebDriver driver) {
+	public CommonUtils(WebDriver driver) {// constructor which takes driver as parameter from test script init class
+		
 		this.driver = driver;
+		
 		UI = new SeleniumUIUtils(driver);
+		
 	}
 
-	public String getUserName(XSSFSheet sheet) throws IOException {
+	public String getUserName(XSSFSheet sheet) throws IOException {//to get the user name, just the name for the corresponding email address.
 
 		String UserName = data.getDataAsString(sheet, "UserName", 2);
+		
 		return UserName;
 	}
 
-	public void login(String username, String password) {
+	public void login(String username, String password) {//this logins to appliaction given user name and password.
 
 		UI.sendKeys(loginPage.emailAddress(), username);
 
@@ -49,7 +53,7 @@ public class CommonUtils extends BaseClass {
 
 	}
 
-	public int readNumberOfRowsInTable(By ele) {
+	public int readNumberOfRowsInTable(By ele) {//this reads number of rows in any given table.
 
 		WebElement toGetRows = UI.getElement(ele);
 		List<WebElement> rowList = toGetRows.findElements(By.tagName("tr"));
@@ -58,7 +62,7 @@ public class CommonUtils extends BaseClass {
 
 	}
 
-	public FileInputStream readFile(String filePath) {
+	public FileInputStream readFile(String filePath) {//this read a excel file.
 		File file = new File(filePath);
 		FileInputStream read = null;
 		try {

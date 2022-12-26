@@ -71,6 +71,8 @@ public class TSAcceptAppointmentByInterpreter extends BaseClass {
 		
 		
 	}
+	
+	
 
 	@Test(description = "This TC will perform valid login and creates a new appointment",priority=0,enabled=false)
 	public void NewAppointment() throws InterruptedException, IOException {

@@ -23,6 +23,7 @@ import org.testng.annotations.Test;
 import com.base.BaseClass;
 import com.pom.NewAppointmentPage;
 import com.pom.DashBoardPage;
+import com.pom.FilterInDashboard;
 import com.pom.LoginPage;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -36,6 +37,7 @@ public class TSAllAppointments extends BaseClass{
 	LoginPage loginPage=new LoginPage();
 	NewAppointmentPage allApts=new NewAppointmentPage();
 	DashBoardPage dashboard=new DashBoardPage();
+	FilterInDashboard filter = new FilterInDashboard();
 	//intializing a variable of type ExtentTest class.
 	//ExtentTest is used to create the body of the report.
 	ExtentTest logger;
@@ -121,6 +123,46 @@ public class TSAllAppointments extends BaseClass{
 			
 											
 		}
+	
+	@Test(enabled = false)
+	public void NewAppointmentRecordAvailabilityByFilter() throws InterruptedException, IOException {
+
+		logger = report.startTest("Verifying the newly created appointment is in All appointments by using filter");
+
+		UI.sendKeys(loginPage.emailAddress(), "ravi.thota@sstech.us");
+		logger.log(LogStatus.INFO, "entered email address as : ravi.thota@sstech.us");
+
+		UI.sendKeys(loginPage.password(), "Welcome@1");
+		logger.log(LogStatus.INFO, "entered password as : Welcome@1");
+
+		UI.click(loginPage.logIn());
+		logger.log(LogStatus.INFO, "clicked Log-in button");
+
+		Thread.sleep(5000);
+
+		UI.click(dashboard.filter());
+		logger.log(LogStatus.INFO, "clicked filter");
+
+		Thread.sleep(1000);
+
+		/*
+		 * UI.sendKeys(filter.language(), "Spanish");
+		 * UI.sendkeyboardKeysEnter(filter.language()); logger.log(LogStatus.INFO,
+		 * "entered lanuguage as spanish");
+		 */
+
+		UI.sendKeys(filter.startDate(), "30-11-2022");
+		UI.sendkeyboardKeysEnter(filter.startDate());
+		logger.log(LogStatus.INFO, "entered start date: 30-11-2022");
+
+		UI.sendKeys(filter.endDate(), "30-11-2022");
+		UI.sendkeyboardKeysEnter(filter.endDate());
+		logger.log(LogStatus.INFO, "entered end date: 30-12-2022");
+
+		UI.click(filter.applyButton());
+		logger.log(LogStatus.INFO, "Clicked Apply button");
+
+	}
 		
 	@AfterMethod
 	public void signout(ITestResult result) throws InterruptedException {

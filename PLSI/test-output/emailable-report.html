@@ -9,15 +9,65 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">6</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">261,801</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">3</td><td class="num">225,978</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="6">com.tests.TSNewAppointment</td><td><a href="#m0">AcceptAppointment</a></td><td rowspan="1">1671971276214</td><td rowspan="1">43662</td></tr><tr class="passedeven"><td><a href="#m1">CheckInAppointment</a></td><td rowspan="1">1671971358805</td><td rowspan="1">31275</td></tr><tr class="passedeven"><td><a href="#m2">CheckOutAndFinaliseAppointment</a></td><td rowspan="1">1671971394669</td><td rowspan="1">35989</td></tr><tr class="passedeven"><td><a href="#m3">RejectAppointment</a></td><td rowspan="1">1671971216846</td><td rowspan="1">54608</td></tr><tr class="passedeven"><td><a href="#m4">ReturnAppointment</a></td><td rowspan="1">1671971323760</td><td rowspan="1">30723</td></tr><tr class="passedeven"><td><a href="#m5">ViewFinancialBreakdown</a></td><td rowspan="1">1671971434840</td><td rowspan="1">38467</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="3">com.tests.TSNewAppointment</td><td><a href="#m0">CheckInAppointment</a></td><td rowspan="1">1672056323553</td><td rowspan="1">31432</td></tr><tr class="failedeven"><td><a href="#m1">CheckOutAndFinaliseAppointment</a></td><td rowspan="1">1672056359046</td><td rowspan="1">51418</td></tr><tr class="failedeven"><td><a href="#m2">ViewFinancialBreakdown</a></td><td rowspan="1">1672056415040</td><td rowspan="1">49325</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.tests.TSNewAppointment</td><td><a href="#m3">AcceptAppointment</a></td><td rowspan="1">1672056243649</td><td rowspan="1">41664</td></tr><tr class="passedeven"><td><a href="#m4">ReturnAppointment</a></td><td rowspan="1">1672056289254</td><td rowspan="1">30123</td></tr></tbody>
 </table>
-<h2>Test</h2><h3 id="m0">com.tests.TSNewAppointment#AcceptAppointment</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.tests.TSNewAppointment#CheckInAppointment</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.tests.TSNewAppointment#CheckOutAndFinaliseAppointment</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.tests.TSNewAppointment#RejectAppointment</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test</h2><h3 id="m0">com.tests.TSNewAppointment#CheckInAppointment</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;material-icons-round notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6m0tds&quot; aria-hidden=&quot;true&quot;&gt;...&lt;/span&gt; is not clickable at point (1481, 63). Other element would receive the click: &lt;div class=&quot;MuiDialog-container MuiDialog-scrollPaper css-16u656j&quot; role=&quot;presentation&quot; tabindex=&quot;-1&quot; style=&quot;transform: none; transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=108.0.5359.125)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;SSTINDEVLP1071&apos;, ip: &apos;192.168.1.19&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bc15f17a45b5d3f883858bdff493ec54, clickElement {id=53744c0e-2ad5-468d-97f4-23ba8700c760}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\Ashwini.G\AppData\...}, goog:chromeOptions: {debuggerAddress: localhost:56319}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56319/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (bc15f17a45b5d3f883858bdff493ec54)] -&gt; xpath: //span[text()=&apos;logout&apos;]]
+Session ID: bc15f17a45b5d3f883858bdff493ec54
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at com.utils.SeleniumUIUtils.click(SeleniumUIUtils.java:58)
+	at com.tests.TSNewAppointment.CheckInAppointment(TSNewAppointment.java:985)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 17 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.tests.TSNewAppointment#CheckOutAndFinaliseAppointment</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //button[text()=&apos;Check Out&apos;] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;SSTINDEVLP1071&apos;, ip: &apos;192.168.1.19&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\Ashwini.G\AppData\...}, goog:chromeOptions: {debuggerAddress: localhost:56381}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56381/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 218061069dfd4f9a048e50f4d594f707
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.utils.SeleniumWaitUtils.waitForElementVisisbility(SeleniumWaitUtils.java:36)
+	at com.utils.SeleniumUIUtils.waitForElementVisibility(SeleniumUIUtils.java:140)
+	at com.tests.TSNewAppointment.CheckOutAndFinaliseAppointment(TSNewAppointment.java:1098)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 12 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.tests.TSNewAppointment#ViewFinancialBreakdown</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //table[@class=&apos;MuiTable-root css-jiyur0&apos;]//tr/td[1] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;SSTINDEVLP1071&apos;, ip: &apos;192.168.1.19&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\Ashwini.G\AppData\...}, goog:chromeOptions: {debuggerAddress: localhost:56460}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56460/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 2df9342cd8d795e1a30d305ad01e0daf
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.utils.SeleniumWaitUtils.waitForElementVisisbility(SeleniumWaitUtils.java:36)
+	at com.utils.SeleniumUIUtils.waitForElementVisibility(SeleniumUIUtils.java:140)
+	at com.tests.TSNewAppointment.ViewFinancialBreakdown(TSNewAppointment.java:1234)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 12 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.tests.TSNewAppointment#AcceptAppointment</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m4">com.tests.TSNewAppointment#ReturnAppointment</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">com.tests.TSNewAppointment#ViewFinancialBreakdown</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
