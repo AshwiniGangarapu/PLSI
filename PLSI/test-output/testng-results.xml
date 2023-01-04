@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="8" passed="2" failed="3" skipped="0">
+<testng-results ignored="7" total="8" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-26T17:33:58 IST" name="Suite" finished-at="2022-12-26T17:37:44 IST" duration-ms="225978">
+  <suite started-at="2022-12-27T20:37:36 IST" name="Suite" finished-at="2022-12-27T20:38:33 IST" duration-ms="57429">
     <groups>
     </groups>
-    <test started-at="2022-12-26T17:33:58 IST" name="Test" finished-at="2022-12-26T17:37:44 IST" duration-ms="225978">
-      <class name="com.tests.TSNewAppointment">
-        <test-method is-config="true" signature="start()[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-26T17:33:58 IST" name="start" finished-at="2022-12-26T17:33:58 IST" duration-ms="492" status="PASS">
+    <test started-at="2022-12-27T20:37:36 IST" name="Test" finished-at="2022-12-27T20:38:33 IST" duration-ms="57429">
+      <class name="com.tests.TSNewAppRejectAccept">
+        <test-method is-config="true" signature="start()[pri:0, instance:com.tests.TSNewAppRejectAccept@4b013c76]" started-at="2022-12-27T20:37:35 IST" name="start" finished-at="2022-12-27T20:37:36 IST" duration-ms="805" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- start -->
-        <test-method is-config="true" signature="init(java.lang.String,java.lang.String)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-26T17:33:58 IST" name="init" finished-at="2022-12-26T17:34:03 IST" duration-ms="4831" status="PASS">
+        <test-method is-config="true" signature="init(java.lang.String,java.lang.String)[pri:0, instance:com.tests.TSNewAppRejectAccept@4b013c76]" started-at="2022-12-27T20:37:36 IST" name="init" finished-at="2022-12-27T20:37:48 IST" duration-ms="11682" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,288 +27,30 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method signature="AcceptAppointment()[pri:2, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-26T17:34:03 IST" name="AcceptAppointment" finished-at="2022-12-26T17:34:45 IST" duration-ms="41664" status="PASS">
+        <test-method signature="SelfBookAppointment()[pri:0, instance:com.tests.TSNewAppRejectAccept@4b013c76]" started-at="2022-12-27T20:37:48 IST" name="SelfBookAppointment" finished-at="2022-12-27T20:38:33 IST" duration-ms="45316" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AcceptAppointment -->
-        <test-method is-config="true" signature="signout(org.testng.ITestResult)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-26T17:34:45 IST" name="signout" finished-at="2022-12-26T17:34:45 IST" duration-ms="196" status="PASS">
+        </test-method> <!-- SelfBookAppointment -->
+        <test-method is-config="true" signature="signout(org.testng.ITestResult)[pri:0, instance:com.tests.TSNewAppRejectAccept@4b013c76]" started-at="2022-12-27T20:38:33 IST" name="signout" finished-at="2022-12-27T20:38:33 IST" duration-ms="386" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AcceptAppointment status=SUCCESS method=TSNewAppointment.AcceptAppointment()[pri:2, instance:com.tests.TSNewAppointment@4b013c76] output={null}]]]>
+                <![CDATA[[TestResult name=SelfBookAppointment status=SUCCESS method=TSNewAppRejectAccept.SelfBookAppointment()[pri:0, instance:com.tests.TSNewAppRejectAccept@4b013c76] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signout -->
-        <test-method is-config="true" signature="init(java.lang.String,java.lang.String)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-26T17:34:45 IST" name="init" finished-at="2022-12-26T17:34:49 IST" duration-ms="3738" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://qa.ims.client.sstech.us/login]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- init -->
-        <test-method signature="ReturnAppointment()[pri:3, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-26T17:34:49 IST" name="ReturnAppointment" finished-at="2022-12-26T17:35:19 IST" duration-ms="30123" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReturnAppointment -->
-        <test-method is-config="true" signature="signout(org.testng.ITestResult)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-26T17:35:19 IST" name="signout" finished-at="2022-12-26T17:35:19 IST" duration-ms="251" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=ReturnAppointment status=SUCCESS method=TSNewAppointment.ReturnAppointment()[pri:3, instance:com.tests.TSNewAppointment@4b013c76] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- signout -->
-        <test-method is-config="true" signature="init(java.lang.String,java.lang.String)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-26T17:35:19 IST" name="init" finished-at="2022-12-26T17:35:23 IST" duration-ms="3921" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://qa.ims.client.sstech.us/login]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- init -->
-        <test-method signature="CheckInAppointment()[pri:4, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-26T17:35:23 IST" name="CheckInAppointment" finished-at="2022-12-26T17:35:54 IST" duration-ms="31432" status="FAIL">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
-            <message>
-              <![CDATA[element click intercepted: Element <span class="material-icons-round notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6m0tds" aria-hidden="true">...</span> is not clickable at point (1481, 63). Other element would receive the click: <div class="MuiDialog-container MuiDialog-scrollPaper css-16u656j" role="presentation" tabindex="-1" style="transform: none; transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;">...</div>
-  (Session info: chrome=108.0.5359.125)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'SSTINDEVLP1071', ip: '192.168.1.19', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [bc15f17a45b5d3f883858bdff493ec54, clickElement {id=53744c0e-2ad5-468d-97f4-23ba8700c760}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\Ashwini.G\AppData\...}, goog:chromeOptions: {debuggerAddress: localhost:56319}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56319/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (bc15f17a45b5d3f883858bdff493ec54)] -> xpath: //span[text()='logout']]
-Session ID: bc15f17a45b5d3f883858bdff493ec54]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="material-icons-round notranslate MuiIcon-root MuiIcon-fontSizeInherit css-6m0tds" aria-hidden="true">...</span> is not clickable at point (1481, 63). Other element would receive the click: <div class="MuiDialog-container MuiDialog-scrollPaper css-16u656j" role="presentation" tabindex="-1" style="transform: none; transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;">...</div>
-  (Session info: chrome=108.0.5359.125)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'SSTINDEVLP1071', ip: '192.168.1.19', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [bc15f17a45b5d3f883858bdff493ec54, clickElement {id=53744c0e-2ad5-468d-97f4-23ba8700c760}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\Ashwini.G\AppData\...}, goog:chromeOptions: {debuggerAddress: localhost:56319}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56319/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (bc15f17a45b5d3f883858bdff493ec54)] -> xpath: //span[text()='logout']]
-Session ID: bc15f17a45b5d3f883858bdff493ec54
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-at com.utils.SeleniumUIUtils.click(SeleniumUIUtils.java:58)
-at com.tests.TSNewAppointment.CheckInAppointment(TSNewAppointment.java:985)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CheckInAppointment -->
-        <test-method is-config="true" signature="signout(org.testng.ITestResult)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-26T17:35:54 IST" name="signout" finished-at="2022-12-26T17:35:55 IST" duration-ms="431" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=CheckInAppointment status=FAILURE method=TSNewAppointment.CheckInAppointment()[pri:4, instance:com.tests.TSNewAppointment@4b013c76] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- signout -->
-        <test-method is-config="true" signature="init(java.lang.String,java.lang.String)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-26T17:35:55 IST" name="init" finished-at="2022-12-26T17:35:59 IST" duration-ms="3617" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://qa.ims.client.sstech.us/login]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- init -->
-        <test-method signature="CheckOutAndFinaliseAppointment()[pri:5, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-26T17:35:59 IST" name="CheckOutAndFinaliseAppointment" finished-at="2022-12-26T17:36:50 IST" duration-ms="51418" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //button[text()='Check Out'] (tried for 30 second(s) with 500 milliseconds interval)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'SSTINDEVLP1071', ip: '192.168.1.19', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\Ashwini.G\AppData\...}, goog:chromeOptions: {debuggerAddress: localhost:56381}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56381/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 218061069dfd4f9a048e50f4d594f707]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //button[text()='Check Out'] (tried for 30 second(s) with 500 milliseconds interval)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'SSTINDEVLP1071', ip: '192.168.1.19', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\Ashwini.G\AppData\...}, goog:chromeOptions: {debuggerAddress: localhost:56381}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56381/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 218061069dfd4f9a048e50f4d594f707
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-at com.utils.SeleniumWaitUtils.waitForElementVisisbility(SeleniumWaitUtils.java:36)
-at com.utils.SeleniumUIUtils.waitForElementVisibility(SeleniumUIUtils.java:140)
-at com.tests.TSNewAppointment.CheckOutAndFinaliseAppointment(TSNewAppointment.java:1098)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CheckOutAndFinaliseAppointment -->
-        <test-method is-config="true" signature="signout(org.testng.ITestResult)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-26T17:36:50 IST" name="signout" finished-at="2022-12-26T17:36:50 IST" duration-ms="377" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=CheckOutAndFinaliseAppointment status=FAILURE method=TSNewAppointment.CheckOutAndFinaliseAppointment()[pri:5, instance:com.tests.TSNewAppointment@4b013c76] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- signout -->
-        <test-method is-config="true" signature="init(java.lang.String,java.lang.String)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-26T17:36:50 IST" name="init" finished-at="2022-12-26T17:36:55 IST" duration-ms="4195" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://qa.ims.client.sstech.us/login]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- init -->
-        <test-method signature="ViewFinancialBreakdown()[pri:6, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-26T17:36:55 IST" name="ViewFinancialBreakdown" finished-at="2022-12-26T17:37:44 IST" duration-ms="49325" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //table[@class='MuiTable-root css-jiyur0']//tr/td[1] (tried for 30 second(s) with 500 milliseconds interval)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'SSTINDEVLP1071', ip: '192.168.1.19', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\Ashwini.G\AppData\...}, goog:chromeOptions: {debuggerAddress: localhost:56460}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56460/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 2df9342cd8d795e1a30d305ad01e0daf]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //table[@class='MuiTable-root css-jiyur0']//tr/td[1] (tried for 30 second(s) with 500 milliseconds interval)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'SSTINDEVLP1071', ip: '192.168.1.19', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\Ashwini.G\AppData\...}, goog:chromeOptions: {debuggerAddress: localhost:56460}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56460/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 2df9342cd8d795e1a30d305ad01e0daf
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-at com.utils.SeleniumWaitUtils.waitForElementVisisbility(SeleniumWaitUtils.java:36)
-at com.utils.SeleniumUIUtils.waitForElementVisibility(SeleniumUIUtils.java:140)
-at com.tests.TSNewAppointment.ViewFinancialBreakdown(TSNewAppointment.java:1234)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ViewFinancialBreakdown -->
-        <test-method is-config="true" signature="signout(org.testng.ITestResult)[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-26T17:37:44 IST" name="signout" finished-at="2022-12-26T17:37:44 IST" duration-ms="404" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=ViewFinancialBreakdown status=FAILURE method=TSNewAppointment.ViewFinancialBreakdown()[pri:6, instance:com.tests.TSNewAppointment@4b013c76] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- signout -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-26T17:37:44 IST" name="teardown" finished-at="2022-12-26T17:37:44 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.tests.TSNewAppRejectAccept@4b013c76]" started-at="2022-12-27T20:38:33 IST" name="teardown" finished-at="2022-12-27T20:38:33 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="closeApplication()[pri:0, instance:com.tests.TSNewAppointment@4b013c76]" started-at="2022-12-26T17:37:44 IST" name="closeApplication" finished-at="2022-12-26T17:37:44 IST" duration-ms="142" status="PASS">
+        <test-method is-config="true" signature="closeApplication()[pri:0, instance:com.tests.TSNewAppRejectAccept@4b013c76]" started-at="2022-12-27T20:38:33 IST" name="closeApplication" finished-at="2022-12-27T20:38:34 IST" duration-ms="223" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApplication -->
-      </class> <!-- com.tests.TSNewAppointment -->
+      </class> <!-- com.tests.TSNewAppRejectAccept -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

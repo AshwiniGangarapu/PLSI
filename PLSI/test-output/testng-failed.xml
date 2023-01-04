@@ -9,18 +9,16 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="URL" value="http://qa.ims.client.sstech.us/login"/>
     <classes>
-      <class name="com.tests.TSNewAppointment">
+      <class name="com.tests.TSNewAppRejectAccept">
         <methods>
-          <include name="ViewFinancialBreakdown"/>
-          <include name="init"/>
-          <include name="CheckOutAndFinaliseAppointment"/>
-          <include name="CheckInAppointment"/>
           <include name="teardown"/>
+          <include name="init"/>
+          <include name="signout"/>
           <include name="closeApplication"/>
           <include name="start"/>
-          <include name="signout"/>
+          <include name="SelfBookAppointment"/>
         </methods>
-      </class> <!-- com.tests.TSNewAppointment -->
+      </class> <!-- com.tests.TSNewAppRejectAccept -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
