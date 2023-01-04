@@ -19,7 +19,8 @@ public class LoginPage{
 	}
 
 	public By invalidCredentialsErrorMsg() {
-		return By.cssSelector(".MuiTypography-root.MuiTypography-body2.css-1xyju2g");
+		//return By.cssSelector(".MuiTypography-root.MuiTypography-body2.css-1xyju2g");
+		return By.xpath("//p[text()='Error: Invalid User Credentials']");
 	}
 
 }

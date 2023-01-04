@@ -39,6 +39,8 @@ import com.utils.SeleniumUIUtils;
 
 public class TSNewAppRejectAccept extends BaseClass {
 
+	/* creating an appointment for today and verifying the test cases */
+
 	SeleniumUIUtils UI = null;
 	WebDriver driver = null;
 	CommonUtils CU = null;
@@ -56,9 +58,9 @@ public class TSNewAppRejectAccept extends BaseClass {
 	ExtentTest logger;
 	XSSFSheet sheet = null;
 	XSSFSheet sheet_Reject = null;
-	
+
 	@Parameters({ "browser", "URL" })
-	//@BeforeClass
+	// @BeforeClass
 	@BeforeMethod
 	public void init(String browser, String URL) throws IOException {
 		driver = openBrowser(browser);
@@ -68,17 +70,17 @@ public class TSNewAppRejectAccept extends BaseClass {
 		driver.manage().window().maximize();
 		sheet = readSheet("New appointment");
 		sheet_Reject = readSheet("Reject-Accept app");
-		
+
 	}
 
-	/*@BeforeMethod
-	public void Setup() {
-		System.out.println("Before test");
-		// data.readExcelDataToArray(sheet);
+	/*
+	 * @BeforeMethod public void Setup() { System.out.println("Before test"); //
+	 * data.readExcelDataToArray(sheet);
+	 * 
+	 * }
+	 */
 
-	}*/
-
-	@Test(description = "This TC will perform valid login and creates a new appointment",enabled=false)
+	@Test(description = "This TC will perform valid login and creates a new appointment", enabled = false)
 	public void NewAppointment() throws InterruptedException, IOException {
 
 		logger = report.startTest("Verifying creating new appointment");
@@ -220,7 +222,6 @@ public class TSNewAppRejectAccept extends BaseClass {
 		UI.sendkeyboardKeysEnter(newApt.requestedLanguage());
 		logger.log(LogStatus.INFO, "entered requested lanuguage as spanish");
 
-		
 		js.executeScript("window.scrollBy(0,550)", "");
 
 		UI.click(newApt.setAppointment());
@@ -234,17 +235,15 @@ public class TSNewAppRejectAccept extends BaseClass {
 
 	}
 
-	
-
-	@Test(priority = 1,enabled = false)
+	@Test(priority = 1, enabled = false)
 	public void RejectAppointment() throws InterruptedException, IOException {
 
 		logger = report.startTest("Verifying rejecting an appointment by interpreter");
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		
-		
-		CU.login(data.getDataAsString(sheet_Reject, "Scheduler Username", 1), data.getDataAsString(sheet_Reject, "Scheduler Password", 1));
+
+		CU.login(data.getDataAsString(sheet_Reject, "Scheduler Username", 1),
+				data.getDataAsString(sheet_Reject, "Scheduler Password", 1));
 		logger.log(LogStatus.INFO, "Logged in as scheduler");
 
 		UI.waitForElementVisibility(dashboard.newAppointment());
@@ -252,9 +251,9 @@ public class TSNewAppRejectAccept extends BaseClass {
 		Thread.sleep(3000);
 
 		logger.log(LogStatus.INFO, "current page is all appointments dashboard");
-		
-		UI.sendKeys(dashboard.search(),"new");
-		
+
+		UI.sendKeys(dashboard.search(), "new");
+
 		Thread.sleep(2000);
 
 		int allAppRowsSize = CU.readNumberOfRowsInTable(dashboard.allAppointmentTableBody());
@@ -279,7 +278,8 @@ public class TSNewAppRejectAccept extends BaseClass {
 			String language = column_language.get(i).getText();
 			System.out.println(column_language.get(i).getText());
 
-			if (status.equalsIgnoreCase("new") && language.equalsIgnoreCase(data.getDataAsString(sheet_Reject,"Requested Language", 1))) {
+			if (status.equalsIgnoreCase("new")
+					&& language.equalsIgnoreCase(data.getDataAsString(sheet_Reject, "Requested Language", 1))) {
 
 				logger.log(LogStatus.INFO, "found a new appointment");
 
@@ -339,9 +339,10 @@ public class TSNewAppRejectAccept extends BaseClass {
 
 			System.out.println(column_Interpreter_Name.get(j).getText());
 
-			if (first_name.equalsIgnoreCase(data.getDataAsString(sheet_Reject,"Interpreter Name", 1))) {
+			if (first_name.equalsIgnoreCase(data.getDataAsString(sheet_Reject, "Interpreter Name", 1))) {
 
-				logger.log(LogStatus.INFO, "selected "+data.getDataAsString(sheet_Reject,"Interpreter Name", 1)+" to make the offer");
+				logger.log(LogStatus.INFO,
+						"selected " + data.getDataAsString(sheet_Reject, "Interpreter Name", 1) + " to make the offer");
 
 				column_Actions.get(j).click();
 				logger.log(LogStatus.INFO, "selected the corresponding row and clicked actions to make offer");
@@ -361,7 +362,8 @@ public class TSNewAppRejectAccept extends BaseClass {
 		UI.click(dashboard.logOut());
 		logger.log(LogStatus.INFO, "logout as scheduler");
 
-		CU.login(data.getDataAsString(sheet_Reject,"Interpreter Username", 1), data.getDataAsString(sheet_Reject,"Interpreter Password", 1));
+		CU.login(data.getDataAsString(sheet_Reject, "Interpreter Username", 1),
+				data.getDataAsString(sheet_Reject, "Interpreter Password", 1));
 		logger.log(LogStatus.INFO, "logged in as interpreter");
 
 		Thread.sleep(2000);
@@ -420,13 +422,14 @@ public class TSNewAppRejectAccept extends BaseClass {
 			}
 
 		}
-		
+
 		UI.waitForElementVisibility(dashboard.logOut());
 
 		UI.click(dashboard.logOut());
 		logger.log(LogStatus.INFO, "logged out as interpreter");
 
-		CU.login(data.getDataAsString(sheet_Reject, "Scheduler Username", 1), data.getDataAsString(sheet_Reject, "Scheduler Password", 1));
+		CU.login(data.getDataAsString(sheet_Reject, "Scheduler Username", 1),
+				data.getDataAsString(sheet_Reject, "Scheduler Password", 1));
 		logger.log(LogStatus.INFO, "Logged in as scheduler");
 
 		Thread.sleep(2000);
@@ -480,13 +483,14 @@ public class TSNewAppRejectAccept extends BaseClass {
 
 			System.out.println(interpreterListRowsSize);
 			String first_name_offer_rejected = column_Interpreter_Name_offer_rejected.get(l).getText();
-			
+
 			System.out.println(column_Interpreter_Name_offer_rejected.get(l).getText());
 			System.out.println(first_name_offer_rejected);
 
-			if (first_name_offer_rejected.equalsIgnoreCase(data.getDataAsString(sheet_Reject,"Interpreter Name", 1))) {
+			if (first_name_offer_rejected.equalsIgnoreCase(data.getDataAsString(sheet_Reject, "Interpreter Name", 1))) {
 
-				logger.log(LogStatus.INFO, "Selected the previous interpret "+data.getDataAsString(sheet_Reject,"Interpreter Name", 1));
+				logger.log(LogStatus.INFO,
+						"Selected the previous interpret " + data.getDataAsString(sheet_Reject, "Interpreter Name", 1));
 				System.out.println(column_Actions_offer_rejected.get(l).getText());
 
 				String offer_status_off_rejected = column_Actions_offer_rejected.get(l).getText();
@@ -505,23 +509,24 @@ public class TSNewAppRejectAccept extends BaseClass {
 
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 2,enabled=false)
 	public void AcceptAppointment() throws InterruptedException, IOException {
 		logger = report.startTest("Verifying accepting an appointment by interpreter");
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		CU.login(data.getDataAsString(sheet_Reject, "Scheduler Username", 1), data.getDataAsString(sheet_Reject, "Scheduler Password", 1));
+		CU.login(data.getDataAsString(sheet_Reject, "Scheduler Username", 1),
+				data.getDataAsString(sheet_Reject, "Scheduler Password", 1));
 		logger.log(LogStatus.INFO, "Logged in as scheduler");
-		
+
 		UI.waitForElementVisibility(dashboard.newAppointment());
 
 		Thread.sleep(3000);
 
 		logger.log(LogStatus.INFO, "current page is all appointments dashboard");
-		
-		UI.sendKeys(dashboard.search(),"new");
-		
+
+		UI.sendKeys(dashboard.search(), "new");
+
 		Thread.sleep(2000);
 
 		int allAppRowsSize = CU.readNumberOfRowsInTable(dashboard.allAppointmentTableBody());
@@ -534,7 +539,7 @@ public class TSNewAppRejectAccept extends BaseClass {
 		List<WebElement> column_language = UI.getElements(dashboard.allAppointmentTableBodyRowsLanguageColumn());
 		logger.log(LogStatus.INFO, "selected the column Language");
 
-		String view_Text = null;//for caturing appointment id
+		String view_Text = null;// for caturing appointment id
 
 		logger.log(LogStatus.INFO, "looping through all rows in Status column till we find new appointment");
 
@@ -546,7 +551,8 @@ public class TSNewAppRejectAccept extends BaseClass {
 			String language = column_language.get(i).getText();
 			System.out.println(column_language.get(i).getText());
 
-			if (status.equalsIgnoreCase("new") && language.equalsIgnoreCase(data.getDataAsString(sheet_Reject,"Requested Language", 1))) {
+			if (status.equalsIgnoreCase("new")
+					&& language.equalsIgnoreCase(data.getDataAsString(sheet_Reject, "Requested Language", 1))) {
 
 				logger.log(LogStatus.INFO, "found a new appointment");
 
@@ -563,7 +569,7 @@ public class TSNewAppRejectAccept extends BaseClass {
 				view_id.click();
 				logger.log(LogStatus.INFO, "able to click appointment id:" + view_Text);
 				Thread.sleep(3000);
-				UI.waitForElementVisibility(appDetails.appointmentId());				
+				UI.waitForElementVisibility(appDetails.appointmentId());
 				logger.log(LogStatus.INFO, " navigated to the appointment details page");
 				String appId = driver.findElement(appDetails.appointmentId()).getAttribute("value");
 				Assert.assertEquals(view_Text, appId);
@@ -586,7 +592,7 @@ public class TSNewAppRejectAccept extends BaseClass {
 		UI.click(appDetails.buttonFindInterpreters());
 
 		logger.log(LogStatus.INFO, " Clicked the button FIND INTERPRETERS");
-		
+
 		UI.waitForElementVisibility(appDetails.interpreterListTableBody());
 		Thread.sleep(1000);
 
@@ -597,23 +603,23 @@ public class TSNewAppRejectAccept extends BaseClass {
 
 		List<WebElement> column_Interpreter_Name = driver.findElements(appDetails.interpreterListTableInterpreterCol());
 		logger.log(LogStatus.INFO, "selected the column Interpreter name");
-		
+
 		logger.log(LogStatus.INFO, "iterating through first name list");
 
 		for (int j = 0; j <= interpreterListRowsSize - 1; j++) {
 
 			String first_name = column_Interpreter_Name.get(j).getText();
-			
+
 			System.out.println(column_Interpreter_Name.get(j).getText());
 
-			if (first_name.equalsIgnoreCase(data.getDataAsString(sheet_Reject,"Interpreter Name", 1))) {
+			if (first_name.equalsIgnoreCase(data.getDataAsString(sheet_Reject, "Interpreter Name", 1))) {
 
-				logger.log(LogStatus.INFO, "selected "+data.getDataAsString(sheet_Reject,"Interpreter Name", 1)+" to make the offer");
+				logger.log(LogStatus.INFO,
+						"selected " + data.getDataAsString(sheet_Reject, "Interpreter Name", 1) + " to make the offer");
 
 				column_Actions.get(j).click();
 				logger.log(LogStatus.INFO, "selected the corresponding row and clicked actions to make offer");
 				Thread.sleep(3000);
-					
 
 				UI.click(appDetails.close());
 				logger.log(LogStatus.INFO, "Closed the popup");
@@ -629,7 +635,8 @@ public class TSNewAppRejectAccept extends BaseClass {
 		UI.click(dashboard.logOut());
 		logger.log(LogStatus.INFO, "logout as scheduler");
 
-		CU.login(data.getDataAsString(sheet_Reject,"Interpreter Username", 1), data.getDataAsString(sheet_Reject,"Interpreter Password", 1));
+		CU.login(data.getDataAsString(sheet_Reject, "Interpreter Username", 1),
+				data.getDataAsString(sheet_Reject, "Interpreter Password", 1));
 		logger.log(LogStatus.INFO, "logged in as interpreter");
 
 		Thread.sleep(2000);
@@ -642,19 +649,18 @@ public class TSNewAppRejectAccept extends BaseClass {
 		UI.click(interpreterDb.OfferedTab());
 		logger.log(LogStatus.INFO, "Clicked Interpreter>Offered tab");
 		Thread.sleep(1000);
-				
-		int count=Integer.parseInt(UI.getText(interpreterDb.OfferedTabCount()));
-	    System.out.println(count);
-	    
+
+		int count = Integer.parseInt(UI.getText(interpreterDb.OfferedTabCount()));
+		System.out.println(count);
+
 		Thread.sleep(3000);
 		UI.waitForElementVisibility(interpreterDb.InterpreterDashboardAppointmentTable());
 
 		int interpreterDashboardAppointmentListRowsSize = CU
 				.readNumberOfRowsInTable(interpreterDb.InterpreterDashboardAppointmentTable());
-		
+
 		Assert.assertEquals(count, interpreterDashboardAppointmentListRowsSize);
 		logger.log(LogStatus.PASS, "The count beside Offered tab is verified with number of records displayed.");
-		
 
 		List<WebElement> column_View = driver.findElements(interpreterDb.InterpreterDashboardAppointmentTableColView());
 		logger.log(LogStatus.INFO, "selected the column View ie appointment id");
@@ -669,11 +675,11 @@ public class TSNewAppRejectAccept extends BaseClass {
 
 				System.out.println(k);
 				column_View.get(k).click();
-				logger.log(LogStatus.PASS, "able to click the id "+view_Text+" in OFFER tab page");
-				
+				logger.log(LogStatus.PASS, "able to click the id " + view_Text + " in OFFER tab page");
+
 				Thread.sleep(3000);
 				UI.waitForElementVisibility(interpreterDb.InterpreterDashboardAppointmentClickTitle());
-				
+
 				String appointment_offer_title = driver
 						.findElement(interpreterDb.InterpreterDashboardAppointmentClickTitle()).getText();
 				System.out.println(appointment_offer_title);
@@ -683,7 +689,7 @@ public class TSNewAppRejectAccept extends BaseClass {
 				UI.click(interpreterDb.AcceptButton());
 
 				logger.log(LogStatus.PASS, "could click Accept Appointment");
-				
+
 				Thread.sleep(10000);
 				UI.waitForElementVisibility(interpreterDb.AcceptedTab());
 				break;
@@ -694,26 +700,27 @@ public class TSNewAppRejectAccept extends BaseClass {
 		logger.log(LogStatus.INFO, "clicked Log-out button");
 
 		Thread.sleep(1000);
-		}
-	
-	@Test(priority=3)
+	}
+
+	@Test(priority = 3,enabled=false)
 	public void ReturnAppointment() throws InterruptedException, IOException {
-		
+
 		logger = report.startTest("Verifying returning an appointment by interpreter");
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		CU.login(data.getDataAsString(sheet_Reject, "Scheduler Username", 1), data.getDataAsString(sheet_Reject, "Scheduler Password", 1));
+		CU.login(data.getDataAsString(sheet_Reject, "Scheduler Username", 1),
+				data.getDataAsString(sheet_Reject, "Scheduler Password", 1));
 		logger.log(LogStatus.INFO, "Logged in as scheduler");
-		
+
 		UI.waitForElementVisibility(dashboard.newAppointment());
 
 		Thread.sleep(3000);
 
 		logger.log(LogStatus.INFO, "current page is all appointments dashboard");
-		
-        UI.sendKeys(dashboard.search(),"Confirmed");
-		
+
+		UI.sendKeys(dashboard.search(), "Confirmed");
+
 		Thread.sleep(2000);
 
 		int allAppRowsSize = CU.readNumberOfRowsInTable(dashboard.allAppointmentTableBody());
@@ -726,7 +733,7 @@ public class TSNewAppRejectAccept extends BaseClass {
 		List<WebElement> column_language = UI.getElements(dashboard.allAppointmentTableBodyRowsLanguageColumn());
 		logger.log(LogStatus.INFO, "selected the column Language");
 
-		String view_Text = null;//for caturing appointment id
+		String view_Text = null;// for caturing appointment id
 
 		logger.log(LogStatus.INFO, "looping through all rows in Status column till we find confirmed appointment");
 
@@ -738,7 +745,8 @@ public class TSNewAppRejectAccept extends BaseClass {
 			String language = column_language.get(i).getText();
 			System.out.println(column_language.get(i).getText());
 
-			if (status.equalsIgnoreCase("Confirmed") && language.equalsIgnoreCase(data.getDataAsString(sheet_Reject,"Requested Language", 1))) {
+			if (status.equalsIgnoreCase("Confirmed")
+					&& language.equalsIgnoreCase(data.getDataAsString(sheet_Reject, "Requested Language", 1))) {
 
 				logger.log(LogStatus.INFO, "found a confirmed appointment");
 
@@ -749,20 +757,21 @@ public class TSNewAppRejectAccept extends BaseClass {
 				view_Text = view_id.getText();
 
 				System.out.println(view_Text);
-				
+
 				break;
 			}
 			js.executeScript("window.scrollBy(0,100)", "");
 		}
-			
+
 		UI.click(dashboard.logOut());
 		logger.log(LogStatus.INFO, "clicked Log-out button");
 
 		Thread.sleep(1000);
-		
-		CU.login(data.getDataAsString(sheet_Reject,"Interpreter Username", 1), data.getDataAsString(sheet_Reject,"Interpreter Password", 1));
+
+		CU.login(data.getDataAsString(sheet_Reject, "Interpreter Username", 1),
+				data.getDataAsString(sheet_Reject, "Interpreter Password", 1));
 		logger.log(LogStatus.INFO, "logged in as interpreter");
-		
+
 		Thread.sleep(2000);
 		UI.waitForElementVisibility(navPanel.Home_Interpreter());
 
@@ -770,84 +779,81 @@ public class TSNewAppRejectAccept extends BaseClass {
 		Thread.sleep(1000);
 		UI.click(navPanel.SubInterpreter());
 		Thread.sleep(1000);
-		
+
 		UI.click(interpreterDb.AcceptedTab());
 		logger.log(LogStatus.INFO, "Clicked Interpreter>Accepted tab");
 
 		Thread.sleep(3000);
 
 		UI.sendKeys(interpreterDb.Search(), view_Text);
-		logger.log(LogStatus.INFO, "entered id "+view_Text+" in search box");
-		
+		logger.log(LogStatus.INFO, "entered id " + view_Text + " in search box");
+
 		Thread.sleep(2000);
 		UI.waitForElementVisibility(interpreterDb.InterpreterDashboardAppointmentTableColView());
 
-		WebElement View_accepted = driver
-				.findElement(interpreterDb.InterpreterDashboardAppointmentTableColView());
-		
+		WebElement View_accepted = driver.findElement(interpreterDb.InterpreterDashboardAppointmentTableColView());
+
 		String acceptedId = View_accepted.getText();
 		Assert.assertEquals(view_Text, acceptedId);
 		logger.log(LogStatus.PASS, "Accepted appointment is avaialable in Accepted tab list");
 
-		WebElement Status_accepted = driver
-				.findElement(interpreterDb.InterpreterDashboardAppointmentTableColStatus());
+		WebElement Status_accepted = driver.findElement(interpreterDb.InterpreterDashboardAppointmentTableColStatus());
 		String acceptedStatus = Status_accepted.getText();
 		Assert.assertEquals("Confirmed", acceptedStatus);
 		logger.log(LogStatus.PASS, "The status is confirmed in the list");
 
 		View_accepted.click();
 		logger.log(LogStatus.INFO, "Clicked the Appointment id in view column");
-		
+
 		UI.waitForElementVisibility(interpreterDb.AppointmentPageTitle());
-		
+
 		Thread.sleep(10000);
-		
+
 		Actions actions = new Actions(driver);
 		WebElement return_Appointment = driver.findElement(interpreterDb.ReturnAppointmentButton());
 		actions.moveToElement(return_Appointment).perform();
-		
-		if(driver.findElement(interpreterDb.HoverTextOnReurnAppointmentButton()).isDisplayed()) {
-		String hoverText = driver.findElement(interpreterDb.HoverTextOnReurnAppointmentButton()).getText();
-		Assert.assertEquals(hoverText,
-				"It is less than 24 Hours before the appointment start time. Please reach out to a Scheduler for immediate assistance");
-		logger.log(LogStatus.PASS, "Hover Text " + hoverText + " is displayed");
-		
-		UI.click(interpreterDb.AppointmentCrossButton());
-		
-		UI.waitForElementVisibility(dashboard.logOut());
-		
-		UI.click(dashboard.logOut());
-		
-		}else {
+
+		if (driver.findElement(interpreterDb.HoverTextOnReurnAppointmentButton()).isDisplayed()) {
+			String hoverText = driver.findElement(interpreterDb.HoverTextOnReurnAppointmentButton()).getText();
+			Assert.assertEquals(hoverText,
+					"It is less than 24 Hours before the appointment start time. Please reach out to a Scheduler for immediate assistance");
+			logger.log(LogStatus.PASS, "Hover Text " + hoverText + " is displayed");
+
+			UI.click(interpreterDb.AppointmentCrossButton());
+
+			UI.waitForElementVisibility(dashboard.logOut());
+
+			UI.click(dashboard.logOut());
+
+		} else {
 			UI.click(interpreterDb.ReturnAppointmentButton());
 			Thread.sleep(10000);
 			UI.waitForElementVisibility(dashboard.logOut());
-			
+
 			UI.click(dashboard.logOut());
 		}
-	    
-		
+
 	}
 
-	@Test(priority=4)
-public void CheckInAppointment() throws InterruptedException, IOException {
-		
+	@Test(priority = 4,enabled=false)
+	public void CheckInAppointment() throws InterruptedException, IOException {
+
 		logger = report.startTest("Verifying Clicking Check-in for an appointment by interpreter");
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		CU.login(data.getDataAsString(sheet_Reject, "Scheduler Username", 1), data.getDataAsString(sheet_Reject, "Scheduler Password", 1));
+		CU.login(data.getDataAsString(sheet_Reject, "Scheduler Username", 1),
+				data.getDataAsString(sheet_Reject, "Scheduler Password", 1));
 		logger.log(LogStatus.INFO, "Logged in as scheduler");
-		
+
 		UI.waitForElementVisibility(dashboard.newAppointment());
 
 		Thread.sleep(3000);
 
 		logger.log(LogStatus.INFO, "current page is all appointments dashboard");
-		
 
-        UI.sendKeys(dashboard.search(),"Confirmed");
-		
+		UI.sendKeys(dashboard.search(), "Confirmed");
+
 		Thread.sleep(2000);
 
 		int allAppRowsSize = CU.readNumberOfRowsInTable(dashboard.allAppointmentTableBody());
@@ -860,7 +866,7 @@ public void CheckInAppointment() throws InterruptedException, IOException {
 		List<WebElement> column_language = UI.getElements(dashboard.allAppointmentTableBodyRowsLanguageColumn());
 		logger.log(LogStatus.INFO, "selected the column Language");
 
-		String view_Text = null;//for caturing appointment id
+		String view_Text = null;// for caturing appointment id
 
 		logger.log(LogStatus.INFO, "looping through all rows in Status column till we find confirmed appointment");
 
@@ -872,7 +878,8 @@ public void CheckInAppointment() throws InterruptedException, IOException {
 			String language = column_language.get(i).getText();
 			System.out.println(column_language.get(i).getText());
 
-			if (status.equalsIgnoreCase("Confirmed") && language.equalsIgnoreCase(data.getDataAsString(sheet_Reject,"Requested Language", 1))) {
+			if (status.equalsIgnoreCase("Confirmed")
+					&& language.equalsIgnoreCase(data.getDataAsString(sheet_Reject, "Requested Language", 1))) {
 
 				logger.log(LogStatus.INFO, "found a confirmed appointment");
 
@@ -883,20 +890,21 @@ public void CheckInAppointment() throws InterruptedException, IOException {
 				view_Text = view_id.getText();
 
 				System.out.println(view_Text);
-				
+
 				break;
 			}
 			js.executeScript("window.scrollBy(0,100)", "");
 		}
-			
+
 		UI.click(dashboard.logOut());
 		logger.log(LogStatus.INFO, "clicked Log-out button");
 
 		Thread.sleep(1000);
-		
-		CU.login(data.getDataAsString(sheet_Reject,"Interpreter Username", 1), data.getDataAsString(sheet_Reject,"Interpreter Password", 1));
+
+		CU.login(data.getDataAsString(sheet_Reject, "Interpreter Username", 1),
+				data.getDataAsString(sheet_Reject, "Interpreter Password", 1));
 		logger.log(LogStatus.INFO, "logged in as interpreter");
-		
+
 		Thread.sleep(2000);
 		UI.waitForElementVisibility(navPanel.Home_Interpreter());
 
@@ -904,75 +912,71 @@ public void CheckInAppointment() throws InterruptedException, IOException {
 		Thread.sleep(1000);
 		UI.click(navPanel.SubInterpreter());
 		Thread.sleep(1000);
-		
+
 		UI.click(interpreterDb.AcceptedTab());
 		logger.log(LogStatus.INFO, "Clicked Interpreter>Accepted tab");
 
 		Thread.sleep(3000);
 
 		UI.sendKeys(interpreterDb.Search(), view_Text);
-		logger.log(LogStatus.INFO, "entered id "+view_Text+" in search box");
-		
+		logger.log(LogStatus.INFO, "entered id " + view_Text + " in search box");
+
 		Thread.sleep(2000);
 		UI.waitForElementVisibility(interpreterDb.InterpreterDashboardAppointmentTableColView());
 
-		WebElement View_accepted = driver
-				.findElement(interpreterDb.InterpreterDashboardAppointmentTableColView());
-		
+		WebElement View_accepted = driver.findElement(interpreterDb.InterpreterDashboardAppointmentTableColView());
+
 		String acceptedId = View_accepted.getText();
 		Assert.assertEquals(view_Text, acceptedId);
 		logger.log(LogStatus.PASS, "Accepted appointment is avaialable in Accepted tab list");
 
-		WebElement Status_accepted = driver
-				.findElement(interpreterDb.InterpreterDashboardAppointmentTableColStatus());
+		WebElement Status_accepted = driver.findElement(interpreterDb.InterpreterDashboardAppointmentTableColStatus());
 		String acceptedStatus = Status_accepted.getText();
 		Assert.assertEquals("Confirmed", acceptedStatus);
 		logger.log(LogStatus.PASS, "The status is confirmed in the list");
 
 		View_accepted.click();
 		logger.log(LogStatus.INFO, "Clicked the Appointment id in view column");
-		
+
 		UI.waitForElementVisibility(interpreterDb.AppointmentPageTitle());
-		
+
 		Thread.sleep(1000);
-		
+
 		UI.waitForElementVisibility(interpreterDb.CheckInButton());
-		
+
 		UI.click(interpreterDb.CheckInButton());
 		logger.log(LogStatus.PASS, "Clicked Check in button");
-		
+
 		Thread.sleep(10000);
 		UI.waitForElementVisibility(dashboard.logOut());
 
 		UI.click(dashboard.logOut());
 		logger.log(LogStatus.INFO, "logged out as interpreter");
-   
-		
+
 	}
 
-	@Test(priority=5)
-public void CheckOutAndFinaliseAppointment() throws InterruptedException, IOException {
-		
+	@Test(priority = 5,enabled=false)
+	public void CheckOutAndFinaliseAppointment() throws InterruptedException, IOException {
+
 		logger = report.startTest("Verifying Clicking Check-out for an appointment by interpreter");
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		CU.login(data.getDataAsString(sheet_Reject, "Scheduler Username", 1), data.getDataAsString(sheet_Reject, "Scheduler Password", 1));
+		CU.login(data.getDataAsString(sheet_Reject, "Scheduler Username", 1),
+				data.getDataAsString(sheet_Reject, "Scheduler Password", 1));
 		logger.log(LogStatus.INFO, "Logged in as scheduler");
-		
+
 		UI.waitForElementVisibility(dashboard.newAppointment());
 
 		Thread.sleep(3000);
 
 		logger.log(LogStatus.INFO, "current page is all appointments dashboard");
-		
 
-        UI.sendKeys(dashboard.search(),"Confirmed");
-		
+		UI.sendKeys(dashboard.search(), "Confirmed");
+
 		Thread.sleep(2000);
 
 		int allAppRowsSize = CU.readNumberOfRowsInTable(dashboard.allAppointmentTableBody());
-		
 
 		logger.log(LogStatus.INFO, "Found number of rows in the page: " + allAppRowsSize);
 
@@ -982,7 +986,7 @@ public void CheckOutAndFinaliseAppointment() throws InterruptedException, IOExce
 		List<WebElement> column_language = UI.getElements(dashboard.allAppointmentTableBodyRowsLanguageColumn());
 		logger.log(LogStatus.INFO, "selected the column Language");
 
-		String view_Text = null;//for caturing appointment id
+		String view_Text = null;// for caturing appointment id
 
 		logger.log(LogStatus.INFO, "looping through all rows in Status column till we find confirmed appointment");
 
@@ -994,7 +998,8 @@ public void CheckOutAndFinaliseAppointment() throws InterruptedException, IOExce
 			String language = column_language.get(i).getText();
 			System.out.println(column_language.get(i).getText());
 
-			if (status.equalsIgnoreCase("Confirmed") && language.equalsIgnoreCase(data.getDataAsString(sheet_Reject,"Requested Language", 1))) {
+			if (status.equalsIgnoreCase("Confirmed")
+					&& language.equalsIgnoreCase(data.getDataAsString(sheet_Reject, "Requested Language", 1))) {
 
 				logger.log(LogStatus.INFO, "found a confirmed appointment");
 
@@ -1005,20 +1010,21 @@ public void CheckOutAndFinaliseAppointment() throws InterruptedException, IOExce
 				view_Text = view_id.getText();
 
 				System.out.println(view_Text);
-				
+
 				break;
 			}
 			js.executeScript("window.scrollBy(0,100)", "");
 		}
-			
+
 		UI.click(dashboard.logOut());
 		logger.log(LogStatus.INFO, "clicked Log-out button");
 
 		Thread.sleep(1000);
-		
-		CU.login(data.getDataAsString(sheet_Reject,"Interpreter Username", 1), data.getDataAsString(sheet_Reject,"Interpreter Password", 1));
+
+		CU.login(data.getDataAsString(sheet_Reject, "Interpreter Username", 1),
+				data.getDataAsString(sheet_Reject, "Interpreter Password", 1));
 		logger.log(LogStatus.INFO, "logged in as interpreter");
-		
+
 		Thread.sleep(2000);
 		UI.waitForElementVisibility(navPanel.Home_Interpreter());
 
@@ -1026,223 +1032,454 @@ public void CheckOutAndFinaliseAppointment() throws InterruptedException, IOExce
 		Thread.sleep(1000);
 		UI.click(navPanel.SubInterpreter());
 		Thread.sleep(1000);
-		
+
 		UI.click(interpreterDb.AcceptedTab());
 		logger.log(LogStatus.INFO, "Clicked Interpreter>Accepted tab");
 
 		Thread.sleep(3000);
 
 		UI.sendKeys(interpreterDb.Search(), view_Text);
-		logger.log(LogStatus.INFO, "entered id "+view_Text+" in search box");
-		
+		logger.log(LogStatus.INFO, "entered id " + view_Text + " in search box");
+
 		Thread.sleep(2000);
 		UI.waitForElementVisibility(interpreterDb.InterpreterDashboardAppointmentTableColView());
 
-		WebElement View_accepted = driver
-				.findElement(interpreterDb.InterpreterDashboardAppointmentTableColView());
-		
+		WebElement View_accepted = driver.findElement(interpreterDb.InterpreterDashboardAppointmentTableColView());
+
 		String acceptedId = View_accepted.getText();
 		Assert.assertEquals(view_Text, acceptedId);
 		logger.log(LogStatus.PASS, "Accepted appointment is avaialable in Accepted tab list");
 
-		WebElement Status_accepted = driver
-				.findElement(interpreterDb.InterpreterDashboardAppointmentTableColStatus());
+		WebElement Status_accepted = driver.findElement(interpreterDb.InterpreterDashboardAppointmentTableColStatus());
 		String acceptedStatus = Status_accepted.getText();
 		Assert.assertEquals("Confirmed", acceptedStatus);
 		logger.log(LogStatus.PASS, "The status is confirmed in the list");
 
 		View_accepted.click();
 		logger.log(LogStatus.INFO, "Clicked the Appointment id in view column");
-		
+
 		UI.waitForElementVisibility(interpreterDb.AppointmentPageTitle());
-		
+
 		Thread.sleep(2000);
 		UI.waitForElementVisibility(interpreterDb.CheckOutButton());
-		
+
 		UI.click(interpreterDb.CheckOutButton());
 		logger.log(LogStatus.PASS, "Clicked Check out button");
-		
+
 		Thread.sleep(3000);
 
 		UI.waitForElementVisibility(interpreterDb.FinalizeAppointmentPageTitle());
 
 		List<WebElement> dropdown = driver.findElements(By.xpath("//input[contains(@id,'react-select')]"));
-		
-			dropdown.get(1).sendKeys("Spanish");
-			dropdown.get(1).sendKeys(Keys.ENTER);
-			dropdown.get(2).sendKeys("No");
-			dropdown.get(2).sendKeys(Keys.ENTER);
-		
+
+		dropdown.get(1).sendKeys("Spanish");
+		dropdown.get(1).sendKeys(Keys.ENTER);
+		dropdown.get(2).sendKeys("No");
+		dropdown.get(2).sendKeys(Keys.ENTER);
+
 		UI.click(interpreterDb.FinalizeAppointmentButton());
-		
+
 		Thread.sleep(10000);
-		
+
 		UI.waitForElementVisibility(dashboard.logOut());
 
 		UI.click(dashboard.logOut());
 		logger.log(LogStatus.INFO, "logged out as interpreter");
-   
-		
-		/*UI.clear(interpreterDb.Search());
-		UI.sendKeys(interpreterDb.Search(), view_Text);
-		logger.log(LogStatus.INFO, "entered id in search box");*/
-		
-		/*Thread.sleep(1000);
-		
-		WebElement View_accepted_after_finalize = driver
-				.findElement(interpreterDb.InterpreterDashboardAppointmentTableColView());
-		
-		View_accepted_after_finalize.click();
-		
-		Thread.sleep(1000);
-		
-		js.executeScript("window.scrollBy(0,100)", "");
-		
-		//js.executeScript("window.scrollBy(0,250)", "");
-		
-		UI.click(interpreterDb.FinalizeAppointmentButton());
-		logger.log(LogStatus.PASS, "Clicked Finalize Appointment");*/
-		
-		
+
+		/*
+		 * UI.clear(interpreterDb.Search()); UI.sendKeys(interpreterDb.Search(),
+		 * view_Text); logger.log(LogStatus.INFO, "entered id in search box");
+		 */
+
+		/*
+		 * Thread.sleep(1000);
+		 * 
+		 * WebElement View_accepted_after_finalize = driver
+		 * .findElement(interpreterDb.InterpreterDashboardAppointmentTableColView());
+		 * 
+		 * View_accepted_after_finalize.click();
+		 * 
+		 * Thread.sleep(1000);
+		 * 
+		 * js.executeScript("window.scrollBy(0,100)", "");
+		 * 
+		 * //js.executeScript("window.scrollBy(0,250)", "");
+		 * 
+		 * UI.click(interpreterDb.FinalizeAppointmentButton());
+		 * logger.log(LogStatus.PASS, "Clicked Finalize Appointment");
+		 */
+
 	}
-	
-	@Test(priority=6)
+
+	@Test(priority = 6,enabled=false)
 	
 	public void ViewFinancialBreakdown() throws InterruptedException, IOException {
-			
-			logger = report.startTest("Verifying Clicking Financial breakdown for an appointment by interpreter");
 
-			JavascriptExecutor js = (JavascriptExecutor) driver;
+		logger = report.startTest("Verifying Clicking Financial breakdown for an appointment by interpreter");
 
-			CU.login(data.getDataAsString(sheet_Reject, "Scheduler Username", 1), data.getDataAsString(sheet_Reject, "Scheduler Password", 1));
-			logger.log(LogStatus.INFO, "Logged in as scheduler");
-			
-			
-			UI.waitForElementVisibility(dashboard.newAppointment());
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-			Thread.sleep(3000);
+		CU.login(data.getDataAsString(sheet_Reject, "Scheduler Username", 1),
+				data.getDataAsString(sheet_Reject, "Scheduler Password", 1));
+		logger.log(LogStatus.INFO, "Logged in as scheduler");
 
-			logger.log(LogStatus.INFO, "current page is all appointments dashboard");
-			
+		UI.waitForElementVisibility(dashboard.newAppointment());
 
-	        UI.sendKeys(dashboard.search(),"Completed");
-			
-			Thread.sleep(2000);
+		Thread.sleep(3000);
 
-			int allAppRowsSize = CU.readNumberOfRowsInTable(dashboard.allAppointmentTableBody());
+		logger.log(LogStatus.INFO, "current page is all appointments dashboard");
 
-			logger.log(LogStatus.INFO, "Found number of rows in the page: " + allAppRowsSize);
+		UI.sendKeys(dashboard.search(), "Completed");
 
-			List<WebElement> column_status = UI.getElements(dashboard.allAppointmentTableBodyRowsStatusColumn());
-			logger.log(LogStatus.INFO, "selected the column Status");
+		Thread.sleep(2000);
 
-			List<WebElement> column_language = UI.getElements(dashboard.allAppointmentTableBodyRowsLanguageColumn());
-			logger.log(LogStatus.INFO, "selected the column Language");
+		int allAppRowsSize = CU.readNumberOfRowsInTable(dashboard.allAppointmentTableBody());
 
-			String view_Text = null;//for caturing appointment id
+		logger.log(LogStatus.INFO, "Found number of rows in the page: " + allAppRowsSize);
 
-			logger.log(LogStatus.INFO, "looping through all rows in Status column till we find confirmed appointment");
+		List<WebElement> column_status = UI.getElements(dashboard.allAppointmentTableBodyRowsStatusColumn());
+		logger.log(LogStatus.INFO, "selected the column Status");
 
-			for (int i = 0; i <= allAppRowsSize - 1; i++) {
+		List<WebElement> column_language = UI.getElements(dashboard.allAppointmentTableBodyRowsLanguageColumn());
+		logger.log(LogStatus.INFO, "selected the column Language");
 
-				String status = column_status.get(i).getText();
-				System.out.println(column_status.get(i).getText());
+		String view_Text = null;// for caturing appointment id
 
-				String language = column_language.get(i).getText();
-				System.out.println(column_language.get(i).getText());
+		logger.log(LogStatus.INFO, "looping through all rows in Status column till we find confirmed appointment");
 
-				if (status.equalsIgnoreCase("Completed") && language.equalsIgnoreCase(data.getDataAsString(sheet_Reject,"Requested Language", 1))) {
+		for (int i = 0; i <= allAppRowsSize - 1; i++) {
 
-					logger.log(LogStatus.INFO, "found a Completed appointment");
+			String status = column_status.get(i).getText();
+			System.out.println(column_status.get(i).getText());
 
-					List<WebElement> column_view = UI.getElements(dashboard.allAppointmentTableBodyRowsViewColumn());
+			String language = column_language.get(i).getText();
+			System.out.println(column_language.get(i).getText());
 
-					WebElement view_id = column_view.get(i);
+			if (status.equalsIgnoreCase("Completed")
+					&& language.equalsIgnoreCase(data.getDataAsString(sheet_Reject, "Requested Language", 1))) {
 
-					view_Text = view_id.getText();
+				logger.log(LogStatus.INFO, "found a Completed appointment");
 
-					System.out.println(view_Text);
-					
-					break;
-				}
-				js.executeScript("window.scrollBy(0,100)", "");
+				List<WebElement> column_view = UI.getElements(dashboard.allAppointmentTableBodyRowsViewColumn());
+
+				WebElement view_id = column_view.get(i);
+
+				view_Text = view_id.getText();
+
+				System.out.println(view_Text);
+
+				break;
 			}
-				
-			UI.click(dashboard.logOut());
-			logger.log(LogStatus.INFO, "clicked Log-out button");
+			js.executeScript("window.scrollBy(0,100)", "");
+		}
 
-			Thread.sleep(1000);
-			
-			CU.login(data.getDataAsString(sheet_Reject,"Interpreter Username", 1), data.getDataAsString(sheet_Reject,"Interpreter Password", 1));
-			logger.log(LogStatus.INFO, "logged in as interpreter");
-			
-			Thread.sleep(2000);
-			UI.waitForElementVisibility(navPanel.Home_Interpreter());
+		UI.click(dashboard.logOut());
+		logger.log(LogStatus.INFO, "clicked Log-out button");
 
-			UI.click(navPanel.Home_Interpreter());
-			Thread.sleep(1000);
-			UI.click(navPanel.SubInterpreter());
-			Thread.sleep(1000);
-			
-			UI.click(interpreterDb.AcceptedTab());
-			logger.log(LogStatus.INFO, "Clicked Interpreter>Accepted tab");
+		Thread.sleep(1000);
 
-			Thread.sleep(3000);
+		CU.login(data.getDataAsString(sheet_Reject, "Interpreter Username", 1),
+				data.getDataAsString(sheet_Reject, "Interpreter Password", 1));
+		logger.log(LogStatus.INFO, "logged in as interpreter");
 
-			UI.sendKeys(interpreterDb.Search(), view_Text);
-			logger.log(LogStatus.INFO, "entered id "+view_Text+" in search box");
-			
-			Thread.sleep(2000);
-			UI.waitForElementVisibility(interpreterDb.InterpreterDashboardAppointmentTableColView());
+		Thread.sleep(2000);
+		UI.waitForElementVisibility(navPanel.Home_Interpreter());
 
-			WebElement View_accepted = driver
-					.findElement(interpreterDb.InterpreterDashboardAppointmentTableColView());
-			
-			String acceptedId = View_accepted.getText();
-			Assert.assertEquals(view_Text, acceptedId);
-			logger.log(LogStatus.PASS, "Accepted appointment is avaialable in Accepted tab list");
+		UI.click(navPanel.Home_Interpreter());
+		Thread.sleep(1000);
+		UI.click(navPanel.SubInterpreter());
+		Thread.sleep(1000);
 
-			WebElement Status_accepted = driver
-					.findElement(interpreterDb.InterpreterDashboardAppointmentTableColStatus());
-			String acceptedStatus = Status_accepted.getText();
-			Assert.assertEquals("Completed", acceptedStatus);
-			logger.log(LogStatus.PASS, "The status is completed in the list");
+		UI.click(interpreterDb.AcceptedTab());
+		logger.log(LogStatus.INFO, "Clicked Interpreter>Accepted tab");
 
-			View_accepted.click();
-			logger.log(LogStatus.INFO, "Clicked the Appointment id in view column");
-			
-			UI.waitForElementVisibility(interpreterDb.AppointmentPageTitle());
-			
-			Thread.sleep(2000);
-			
-			UI.click(interpreterDb.FinancialBreakDownButton());
-			logger.log(LogStatus.INFO, "clicked the FinancialBreakDown button ");
-			
-			Thread.sleep(1000);
-					
-			UI.click(interpreterDb.FinancialBreakDownPageCrossButton());
-			logger.log(LogStatus.INFO, "clicked cross button of financial break down page cross button to exit the page ");
-			
-			Thread.sleep(1000);
-			
-			UI.click(interpreterDb.AppointmentCrossButton());
-			logger.log(LogStatus.INFO, "clicked cross button of appointment page ");
-			
-			Thread.sleep(10000);
-						
-			
-			UI.waitForElementVisibility(dashboard.logOut());
-			Thread.sleep(2000);
-			
-			UI.click(dashboard.logOut());
-			logger.log(LogStatus.INFO, "logged out as interpreter");
-			Thread.sleep(2000);
-			
+		Thread.sleep(3000);
+
+		UI.sendKeys(interpreterDb.Search(), view_Text);
+		logger.log(LogStatus.INFO, "entered id " + view_Text + " in search box");
+
+		Thread.sleep(2000);
+		UI.waitForElementVisibility(interpreterDb.InterpreterDashboardAppointmentTableColView());
+
+		WebElement View_accepted = driver.findElement(interpreterDb.InterpreterDashboardAppointmentTableColView());
+
+		String acceptedId = View_accepted.getText();
+		Assert.assertEquals(view_Text, acceptedId);
+		logger.log(LogStatus.PASS, "Accepted appointment is avaialable in Accepted tab list");
+
+		WebElement Status_accepted = driver.findElement(interpreterDb.InterpreterDashboardAppointmentTableColStatus());
+		String acceptedStatus = Status_accepted.getText();
+		Assert.assertEquals("Completed", acceptedStatus);
+		logger.log(LogStatus.PASS, "The status is completed in the list");
+
+		View_accepted.click();
+		logger.log(LogStatus.INFO, "Clicked the Appointment id in view column");
+
+		UI.waitForElementVisibility(interpreterDb.AppointmentPageTitle());
+
+		Thread.sleep(2000);
+
+		UI.click(interpreterDb.FinancialBreakDownButton());
+		logger.log(LogStatus.INFO, "clicked the FinancialBreakDown button ");
+
+		Thread.sleep(1000);
+
+		UI.click(interpreterDb.FinancialBreakDownPageCrossButton());
+		logger.log(LogStatus.INFO, "clicked cross button of financial break down page cross button to exit the page ");
+
+		Thread.sleep(1000);
+
+		UI.click(interpreterDb.AppointmentCrossButton());
+		logger.log(LogStatus.INFO, "clicked cross button of appointment page ");
+
+		Thread.sleep(10000);
+
+		UI.waitForElementVisibility(dashboard.logOut());
+		Thread.sleep(2000);
+
+		UI.click(dashboard.logOut());
+		logger.log(LogStatus.INFO, "logged out as interpreter");
+		Thread.sleep(2000);
+
 	}
 
+	@Test
+	public void SelfBookAppointment() throws InterruptedException, IOException {
+
+		logger = report.startTest("Verifying self book appointment by interpreter");
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		CU.login(data.getDataAsString(sheet_Reject, "Scheduler Username", 1),
+				data.getDataAsString(sheet_Reject, "Scheduler Password", 1));
+		logger.log(LogStatus.INFO, "Logged in as scheduler");
+
+		UI.waitForElementVisibility(dashboard.newAppointment());
+
+		Thread.sleep(3000);
+
+		logger.log(LogStatus.INFO, "current page is all appointments dashboard");
+
+		UI.sendKeys(dashboard.search(), "new");
+		logger.log(LogStatus.INFO, "Entered new in search box");
+
+		Thread.sleep(2000);
+
+		int allAppRowsSize = CU.readNumberOfRowsInTable(dashboard.allAppointmentTableBody());
+
+		logger.log(LogStatus.INFO, "Found number of rows in the page: " + allAppRowsSize);
+
+		List<WebElement> column_status = UI.getElements(dashboard.allAppointmentTableBodyRowsStatusColumn());
+		logger.log(LogStatus.INFO, "selected the column Status");
+
+		List<WebElement> column_language = UI.getElements(dashboard.allAppointmentTableBodyRowsLanguageColumn());
+		logger.log(LogStatus.INFO, "selected the column Language");
+
+		String view_Text = null;// for caturing appointment id
+
+		logger.log(LogStatus.INFO, "looping through all rows in Status column till we find new appointment with language "+data.getDataAsString(sheet_Reject, "Requested Language", 1));
+
+		for (int i = 0; i <= allAppRowsSize - 1; i++) {
+
+			String status = column_status.get(i).getText();
+			System.out.println(column_status.get(i).getText());
+
+			String language = column_language.get(i).getText();
+			System.out.println(column_language.get(i).getText());
+
+			if (status.equalsIgnoreCase("new")
+					&& language.equalsIgnoreCase(data.getDataAsString(sheet_Reject, "Requested Language", 1))) {
+
+				logger.log(LogStatus.INFO, "found a new appointment with requested language "+data.getDataAsString(sheet_Reject, "Requested Language", 1));
+
+				List<WebElement> column_view = UI.getElements(dashboard.allAppointmentTableBodyRowsViewColumn());
+
+				WebElement view_id = column_view.get(i);
+
+				view_Text = view_id.getText();
+
+				System.out.println(view_Text);
+
+				Thread.sleep(1000);
+
+				view_id.click();
+				logger.log(LogStatus.INFO, "able to click appointment id:" + view_Text);
+				Thread.sleep(3000);
+				UI.waitForElementVisibility(appDetails.appointmentId());
+				logger.log(LogStatus.INFO, " navigated to the appointment details page");
+				String appId = driver.findElement(appDetails.appointmentId()).getAttribute("value");
+				Assert.assertEquals(view_Text, appId);
+				logger.log(LogStatus.PASS,
+						"clicked appointment id:" + view_Text + " and verified same appointment is being displayed");
+
+				break;
+			}
+
+			js.executeScript("window.scrollBy(0,100)", "");
+		}
+
+		UI.click(appDetails.tabInterpreterMatching());
+
+		logger.log(LogStatus.INFO, " Clicked INTERPRETER MATCHING Tab");
+
+		Thread.sleep(1000);
+		UI.waitForElementVisibility(appDetails.buttonFindInterpreters());
+
+		UI.click(appDetails.buttonFindInterpreters());
+
+		logger.log(LogStatus.INFO, " Clicked the button FIND INTERPRETERS");
+
+		UI.waitForElementVisibility(appDetails.interpreterListTableBody());
+		Thread.sleep(1000);
+		
+		int interpreterListRowsSize = CU.readNumberOfRowsInTable(appDetails.interpreterListTableBody());
+		
+		List<WebElement> column_Interpreter_Email = driver.findElements(appDetails.interpreterListTableEmailCol());
+		logger.log(LogStatus.INFO, "selected the column Interpreter name");
+		
+		System.out.println(interpreterListRowsSize);
+		
+		System.out.println(column_Interpreter_Email.size());
+		logger.log(LogStatus.INFO, "number of interpreters available "+column_Interpreter_Email.size());
+		
+		String[] interpreters = new String[column_Interpreter_Email.size()];
+		
+		for (int i = 0; i < interpreterListRowsSize; i++) {
+
+			System.out.println(column_Interpreter_Email.get(i).getText());
 			
-	
-	
+			interpreters[i] = column_Interpreter_Email.get(i).getText();
+			    
+		        // Printing using for each loop
+		        for (String k : interpreters) {
+		            System.out.println(k);
+		        }
+			
+			
+		}
+
+		UI.click(appDetails.close());
+		
+		Thread.sleep(1000);
+
+		UI.click(dashboard.logOut());
+
+		for (int j = 0; j < interpreterListRowsSize; j++)  {
+
+			System.out.println(interpreters[j]);
+
+			String interpreter = interpreters[j];
+
+			CU.login(interpreter, "Welcome@1");
+			logger.log(LogStatus.INFO, "Logged in as interpreter " + interpreter + " found in the list for the id "+view_Text);
+
+			Thread.sleep(2000);
+
+			if (UI.isDisplayed(dashboard.newAppointment())) {
+
+				logger.log(LogStatus.INFO, "current page is all appointments dashboard");
+
+				UI.waitForElementVisibility(navPanel.Interpreters());
+				UI.click(navPanel.Interpreters());
+				UI.waitForElementVisibility(navPanel.SubInterpreter());
+				UI.click(navPanel.SubInterpreter());
+				Thread.sleep(1000);
+				logger.log(LogStatus.INFO, "Clciked Interpreters>interpreters");
+
+				UI.sendKeys(interpreterDb.Search(), interpreter);
+				logger.log(LogStatus.INFO, "Entered the interpreter email " + interpreter + " in search");
+
+				driver.findElement(By.xpath("//td[@class='MuiBox-root css-e1swko']/div/div")).click();
+				logger.log(LogStatus.INFO, "clicked the interpreter");
+
+				Thread.sleep(2000);
+				UI.waitForElementVisibility(interpreterDb.EditInterpreter());
+				UI.click(interpreterDb.EditInterpreter());
+				logger.log(LogStatus.INFO, "clicked the Edit Interpreter to see the status of checkbox");
+
+				Thread.sleep(2000);
+				UI.waitForElementVisibility(interpreterDb.CanSelfBookAppointment());
+
+				String selfbookCheckboxValue = UI.getElement(interpreterDb.CanSelfBookAppointment())
+						.getAttribute("value");
+
+				if (selfbookCheckboxValue.equalsIgnoreCase("true")) {
+					
+					logger.log(LogStatus.INFO, "ths check box is selected ie this interpreter can self book an appointment");
+
+					UI.click(interpreterDb.Cancel());
+					UI.click(interpreterDb.Close());
+
+					UI.click(navPanel.Home_Interpreter());
+					Thread.sleep(1000);
+					UI.click(navPanel.SubInterpreter());
+					Thread.sleep(1000);
+					UI.isDisplayed(interpreterDb.AvailableTab());
+					logger.log(LogStatus.PASS, "Available tab is displayed as self book appointment check box is checked.");
+					UI.click(interpreterDb.AvailableTab());
+					logger.log(LogStatus.PASS, "Clicked Available tab");
+					UI.sendKeys(interpreterDb.Search(), view_Text);
+					logger.log(LogStatus.INFO, "entered id "+view_Text+" in search box");
+
+					Thread.sleep(2000);
+					UI.waitForElementVisibility(interpreterDb.InterpreterDashboardAppointmentTableColView());
+
+					WebElement View_id = driver
+							.findElement(interpreterDb.InterpreterDashboardAppointmentTableColView());
+
+					View_id.click();
+
+					logger.log(LogStatus.PASS, "appointment id " + view_Text + " is displayed in AVAILABLE tab page");
+
+					Thread.sleep(3000);
+					UI.waitForElementVisibility(interpreterDb.InterpreterDashboardAppointmentClickTitle());
+
+					String appointment_offer_title = driver
+							.findElement(interpreterDb.InterpreterDashboardAppointmentClickTitle()).getText();
+					System.out.println(appointment_offer_title);
+					Assert.assertTrue(appointment_offer_title.contains(view_Text));
+					logger.log(LogStatus.PASS, "Verified the title has the view id selected i.e." + view_Text);
+
+					UI.click(interpreterDb.AcceptButton());
+
+					logger.log(LogStatus.PASS, "could click Accept Appointment");
+
+					Thread.sleep(10000);
+					
+					break;
+
+				} else if (selfbookCheckboxValue.equalsIgnoreCase("false")) {
+
+					UI.click(interpreterDb.Cancel());
+					UI.click(interpreterDb.Close());
+
+					UI.click(navPanel.Home_Interpreter());
+					Thread.sleep(1000);
+					UI.click(navPanel.SubInterpreter());
+					Thread.sleep(1000);
+
+					Boolean availableTab = UI.isDisplayed(interpreterDb.AvailableTab());
+
+					if (availableTab) {
+						logger.log(LogStatus.FAIL, "Available tab is displayed even though the check box is unchecked");
+						
+					} else {
+						logger.log(LogStatus.PASS, "Available tab is not displayed");
+					}
+				}
+
+			}
+
+			else if (UI.isDisplayed(loginPage.invalidCredentialsErrorMsg())) {
+
+				System.out.println("considering another interpreter in list as password is unknown");
+
+			}
+
+		}
+
+	}
+
 	@AfterMethod
 	public void signout(ITestResult result) throws InterruptedException {
 
@@ -1259,15 +1496,13 @@ public void CheckOutAndFinaliseAppointment() throws InterruptedException, IOExce
 
 		report.endTest(logger);
 		driver.quit();
-		
+
 	}
-	
-	
 
 	@AfterClass
 	public void teardown() {
 		System.out.println("Entered After Class");
-		//driver.quit();
+		// driver.quit();
 	}
 
 }

@@ -19,6 +19,11 @@ public class InterpreterDashboard {
 		
 		return By.xpath("//span[text()='ACCEPTED']");
 	}
+	
+    public By AvailableTab() {
+		
+		return By.xpath("//span[text()='AVAILABLE']");
+	}
 
 	public By Search() {
 		
@@ -122,5 +127,27 @@ public By AppointmentCrossButton() {
 		return By.xpath("//p[ contains (text(),'Appointment -')]/button");
 		
 	}
+
+public By EditInterpreter() {
+	
+	return By.xpath("//button[text()='EDIT INTERPRETER']");
+	
+}
+
+public By CanSelfBookAppointment() {
+	return By.xpath("//span[text()='Can Self-Book for Appointments']");
+}
+
+public By Cancel() {
+	
+	return By.xpath("//button[text()='Cancel']");
+	
+}
+
+public By Close() {
+	return By.xpath("//button[text()='close']");
+}
+
+
 	
 }
