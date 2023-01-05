@@ -5,17 +5,19 @@
   <parameter name="URL" value="http://qa.ims.client.sstech.us/login"/>
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.tests.TSNewAppointment">
+      <class name="com.tests.TSNewAppRejectAccept">
         <methods>
-          <include name="init"/>
-          <include name="Setup"/>
-          <include name="closeApplication"/>
+          <include name="CheckInAppointment"/>
           <include name="teardown"/>
-          <include name="NewAppointment"/>
-          <include name="start"/>
+          <include name="ViewFinancialBreakdown"/>
+          <include name="init"/>
           <include name="signout"/>
+          <include name="ReturnAppointment"/>
+          <include name="closeApplication"/>
+          <include name="CheckOutAndFinaliseAppointment"/>
+          <include name="start"/>
         </methods>
-      </class> <!-- com.tests.TSNewAppointment -->
+      </class> <!-- com.tests.TSNewAppRejectAccept -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
